@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Gym_management
 {
-    public partial class DoiTen : Form
+    public partial class Payment : Form
     {
-        public DoiTen()
+        public Payment()
         {
             InitializeComponent();
         }
