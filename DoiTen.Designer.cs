@@ -54,7 +54,7 @@
             this.bunifuTextbox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuTextbox1.ForeColor = System.Drawing.Color.SeaGreen;
             this.bunifuTextbox1.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox1.Icon")));
-            this.bunifuTextbox1.Location = new System.Drawing.Point(318, 146);
+            this.bunifuTextbox1.Location = new System.Drawing.Point(313, 262);
             this.bunifuTextbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuTextbox1.Name = "bunifuTextbox1";
             this.bunifuTextbox1.Size = new System.Drawing.Size(333, 52);
@@ -68,7 +68,7 @@
             this.bunifuCheckbox2.Checked = true;
             this.bunifuCheckbox2.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
             this.bunifuCheckbox2.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox2.Location = new System.Drawing.Point(214, 253);
+            this.bunifuCheckbox2.Location = new System.Drawing.Point(468, 90);
             this.bunifuCheckbox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuCheckbox2.Name = "bunifuCheckbox2";
             this.bunifuCheckbox2.Size = new System.Drawing.Size(20, 20);
