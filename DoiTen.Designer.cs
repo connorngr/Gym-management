@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoiTen));
             this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.bunifuTextbox1 = new Bunifu.Framework.UI.BunifuTextbox();
             this.SuspendLayout();
             // 
             // bunifuCheckbox1
@@ -44,13 +46,28 @@
             this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox1.TabIndex = 0;
             // 
-            // Form1
+            // bunifuTextbox1
+            // 
+            this.bunifuTextbox1.BackColor = System.Drawing.Color.Silver;
+            this.bunifuTextbox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox1.BackgroundImage")));
+            this.bunifuTextbox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuTextbox1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuTextbox1.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox1.Icon")));
+            this.bunifuTextbox1.Location = new System.Drawing.Point(318, 146);
+            this.bunifuTextbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuTextbox1.Name = "bunifuTextbox1";
+            this.bunifuTextbox1.Size = new System.Drawing.Size(333, 52);
+            this.bunifuTextbox1.TabIndex = 1;
+            this.bunifuTextbox1.text = "Bunifu TextBox";
+            // 
+            // DoiTen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bunifuTextbox1);
             this.Controls.Add(this.bunifuCheckbox1);
-            this.Name = "Form1";
+            this.Name = "DoiTen";
             this.Text = "Form1";
             this.ResumeLayout(false);
 
@@ -59,6 +76,7 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
+        private Bunifu.Framework.UI.BunifuTextbox bunifuTextbox1;
     }
 }
 
