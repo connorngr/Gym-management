@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoiTen));
             this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.bunifuTextbox1 = new Bunifu.Framework.UI.BunifuTextbox();
+            this.bunifuCheckbox2 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.SuspendLayout();
             // 
             // bunifuCheckbox1
@@ -60,11 +61,25 @@
             this.bunifuTextbox1.TabIndex = 1;
             this.bunifuTextbox1.text = "Bunifu TextBox";
             // 
+            // bunifuCheckbox2
+            // 
+            this.bunifuCheckbox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.bunifuCheckbox2.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckbox2.Checked = true;
+            this.bunifuCheckbox2.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.bunifuCheckbox2.ForeColor = System.Drawing.Color.White;
+            this.bunifuCheckbox2.Location = new System.Drawing.Point(214, 253);
+            this.bunifuCheckbox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuCheckbox2.Name = "bunifuCheckbox2";
+            this.bunifuCheckbox2.Size = new System.Drawing.Size(20, 20);
+            this.bunifuCheckbox2.TabIndex = 2;
+            // 
             // DoiTen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bunifuCheckbox2);
             this.Controls.Add(this.bunifuTextbox1);
             this.Controls.Add(this.bunifuCheckbox1);
             this.Name = "DoiTen";
@@ -77,6 +92,7 @@
 
         private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
         private Bunifu.Framework.UI.BunifuTextbox bunifuTextbox1;
+        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox2;
     }
 }
 
