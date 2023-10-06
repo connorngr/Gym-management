@@ -1,0 +1,3 @@
+font: century gothic
+font color:Lightseagreen,LightGreen
+text bõ:20
