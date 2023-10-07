@@ -50,17 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DoiTen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DoiTen.Designer.cs">
-      <DependentUpon>DoiTen.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DoiTen.resx">
-      <DependentUpon>DoiTen.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Update&amp;Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update&amp;Delete.Designer.cs">
+      <DependentUpon>Update&amp;Delete.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -70,6 +67,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Update&amp;Delete.resx">
+      <DependentUpon>Update&amp;Delete.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Gym_management
 {
-    public partial class DoiTen : Form
+    public partial class Update_Delete : Form
     {
-        public DoiTen()
+        public Update_Delete()
         {
             InitializeComponent();
         }
