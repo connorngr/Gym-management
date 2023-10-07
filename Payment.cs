@@ -104,7 +104,6 @@ namespace Gym_management
                 }
                 else
                 {
-                    payperiode = Periode.Value.Month.ToString() + "/" + Periode.Value.Year.ToString();
                     string query = "insert into PaymentTbl values('" + payperiode + "','" + numcb.SelectedValue.ToString() + "','" + amounttb.Text + "')";
                     SqlCommand cmd= new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
