@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Gym_management
 {
-    public partial class DoiTen : Form
+    public partial class ViewMemcs : Form
     {
-        public DoiTen()
+        public ViewMemcs()
         {
             InitializeComponent();
         }
