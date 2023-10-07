@@ -16,5 +16,20 @@ namespace Gym_management
         {
             InitializeComponent();
         }
+
+        private void txtPhoneNum_TextChanged(object sender, EventArgs e)
+        {
+            string phoneNumber = txtPhoneNum.Text;
+            // Kiểm tra xem có nhập đúng từ 0-9 không
+            bool isValid = System.Text.RegularExpressions.Regex.IsMatch(phoneNumber, "^[0-9]+$");
+            if (isValid)
+            {
+                //HÀM XỬ LÝ               
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chỉ nhập số điện thoại.");
+            }
+        }
     }
 }
