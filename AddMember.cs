@@ -16,6 +16,11 @@ namespace Gym_management
 
         // Create instance (null)
         public PassControl passControl;
+        private bool bIsButtonClicked;
+        private object _threadProcessCCTV;
+
+        public static string Avatar { get; private set; }
+
         public AddMember()
         {
             InitializeComponent();
@@ -97,23 +102,21 @@ namespace Gym_management
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn huỷ đăng kí thành viên ?", "Thông báo", MessageBoxButtons.YesNo);
-            if (dr == DialogResult.Yes)
-                Application.Exit();
+            Close();
         }
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txtFullName.Text == "" || txtAddress.Text == "" || txtEmail.Text == "" || txtSdt.Text == "")
+                if (txtFullName.Text == "" || txtAddress.Text == "" || txtEmail1.Text == "" || txtSdt.Text == "")
                     throw new Exception("Vui lòng nhập đủ thông tin !");
                 if (txtSdt.TextLength < 10)
                     throw new Exception("Số điện thoại không hợp lệ");
                 
                 if (!(txtFullName.TextLength > 3 && txtFullName.TextLength < 100))
                     throw new Exception("Tên quá dài hoặc quá ngắn");
-                if (!txtEmail.Text.Contains("@gmail.com"))
+                if (!txtEmail1.Text.Contains("@gmail.com"))
                     throw new Exception("Sai dinh dang email");
 
                 if (passControl != null)
@@ -132,6 +135,76 @@ namespace Gym_management
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void txtAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuThinButton23_Click(object sender, EventArgs e)
+        {
+            string imagePath = "";
+
+            try
+            {
+                OpenFileDialog fileOpen = new OpenFileDialog();
+                fileOpen.Title = "Chọn hình ảnh sinh viên";
+                fileOpen.Filter = "Hình ảnh (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png|All files (*,*)|*.*";
+                if (fileOpen.ShowDialog() == DialogResult.OK)
+                {
+                    imagePath = fileOpen.FileName;
+                    AddMember.Avatar = imagePath;
+                    picture1.Image = Image.FromFile(imagePath);
+                    picture1.Refresh();
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi không thể upload ảnh!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            if (Form.ModifierKeys == Keys.None && keyData == Keys.Escape)
+            {
+                this.Close();
+                return true;
+            }
+            return base.ProcessDialogKey(keyData);
+        }
+
+        private void AddMember_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                dynamic result = MessageBox.Show("Bạn có chắc muốn thoát?", "Thông Báo", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void AddMember_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
     }
 }
