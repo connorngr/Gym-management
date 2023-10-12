@@ -31,31 +31,26 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMember));
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtSdt = new System.Windows.Forms.TextBox();
             this.rbMale = new System.Windows.Forms.RadioButton();
             this.rbFemale = new System.Windows.Forms.RadioButton();
-            this.bunifuDatepicker1 = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.txtFullName = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.bunifuDatepicker2 = new Bunifu.Framework.UI.BunifuDatepicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtEmail = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.txtEmail1 = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.picture1 = new System.Windows.Forms.PictureBox();
             this.ChonAnh = new Bunifu.Framework.UI.BunifuThinButton2();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtFullName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtAge = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtSdt = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picture1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCustomLabel1
@@ -84,19 +79,6 @@
             this.label1.Text = "Họ Tên";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(38, 303);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 20);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Địa Chỉ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -110,19 +92,6 @@
             this.label3.Text = "Giới Tính";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(32, 242);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 20);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Ngày Sinh";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -135,14 +104,6 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Số Điện Thoại";
             this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // txtSdt
-            // 
-            this.txtSdt.Location = new System.Drawing.Point(146, 137);
-            this.txtSdt.Name = "txtSdt";
-            this.txtSdt.Size = new System.Drawing.Size(164, 20);
-            this.txtSdt.TabIndex = 2;
-            this.txtSdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // rbMale
             // 
@@ -168,49 +129,19 @@
             this.rbFemale.Text = "Nữ";
             this.rbFemale.UseVisualStyleBackColor = false;
             // 
-            // bunifuDatepicker1
-            // 
-            this.bunifuDatepicker1.BackColor = System.Drawing.Color.SeaGreen;
-            this.bunifuDatepicker1.BorderRadius = 0;
-            this.bunifuDatepicker1.ForeColor = System.Drawing.Color.White;
-            this.bunifuDatepicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.bunifuDatepicker1.FormatCustom = null;
-            this.bunifuDatepicker1.Location = new System.Drawing.Point(146, 242);
-            this.bunifuDatepicker1.Name = "bunifuDatepicker1";
-            this.bunifuDatepicker1.Size = new System.Drawing.Size(216, 31);
-            this.bunifuDatepicker1.TabIndex = 5;
-            this.bunifuDatepicker1.Value = new System.DateTime(2023, 10, 10, 22, 16, 6, 613);
-            this.bunifuDatepicker1.onValueChanged += new System.EventHandler(this.bunifuDatepicker1_onValueChanged);
-            // 
-            // txtFullName
-            // 
-            this.txtFullName.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtFullName.Location = new System.Drawing.Point(146, 88);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(164, 20);
-            this.txtFullName.TabIndex = 1;
-            this.txtFullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bunifuCustomTextbox1_KeyPress);
-            // 
-            // bunifuDatepicker2
-            // 
-            this.bunifuDatepicker2.BackColor = System.Drawing.Color.SeaGreen;
-            this.bunifuDatepicker2.BorderRadius = 0;
-            this.bunifuDatepicker2.ForeColor = System.Drawing.Color.White;
-            this.bunifuDatepicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.bunifuDatepicker2.FormatCustom = null;
-            this.bunifuDatepicker2.Location = new System.Drawing.Point(443, 125);
-            this.bunifuDatepicker2.Name = "bunifuDatepicker2";
-            this.bunifuDatepicker2.Size = new System.Drawing.Size(216, 31);
-            this.bunifuDatepicker2.TabIndex = 8;
-            this.bunifuDatepicker2.Value = new System.DateTime(2023, 10, 10, 22, 17, 6, 353);
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(443, 189);
+            this.comboBox1.ItemHeight = 13;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Basic",
+            "Gold",
+            "Platinum",
+            "Icon"});
+            this.comboBox1.Location = new System.Drawing.Point(443, 136);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 9;
+            this.comboBox1.TabIndex = 6;
             // 
             // txtEmail
             // 
@@ -220,23 +151,10 @@
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.Location = new System.Drawing.Point(381, 92);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(48, 20);
+            this.txtEmail.Size = new System.Drawing.Size(39, 20);
             this.txtEmail.TabIndex = 22;
-            this.txtEmail.Text = "Email";
+            this.txtEmail.Text = "Tuổi";
             this.txtEmail.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(332, 136);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(105, 20);
-            this.label7.TabIndex = 23;
-            this.label7.Text = "Ngày Đăng Kí";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -244,20 +162,12 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(364, 191);
+            this.label8.Location = new System.Drawing.Point(372, 137);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 20);
             this.label8.TabIndex = 24;
             this.label8.Text = "Gói Tập";
             this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Location = new System.Drawing.Point(146, 279);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(219, 101);
-            this.txtAddress.TabIndex = 6;
-            this.txtAddress.Text = "";
             // 
             // label9
             // 
@@ -265,19 +175,27 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(364, 242);
+            this.label9.Location = new System.Drawing.Point(379, 191);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 20);
+            this.label9.Size = new System.Drawing.Size(41, 20);
             this.label9.TabIndex = 26;
-            this.label9.Text = "Thời Hạn";
+            this.label9.Text = "Buổi";
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(443, 241);
+            this.comboBox2.ItemHeight = 13;
+            this.comboBox2.Items.AddRange(new object[] {
+            "8Am-10Am",
+            "10Am-12Am",
+            "1Pm-3Pm",
+            "3Pm-5Pm",
+            "5Pm-7Pm",
+            "7Pm-9Pm"});
+            this.comboBox2.Location = new System.Drawing.Point(443, 190);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 10;
+            this.comboBox2.TabIndex = 7;
             // 
             // bunifuThinButton21
             // 
@@ -301,50 +219,16 @@
             this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuThinButton21.Name = "bunifuThinButton21";
             this.bunifuThinButton21.Size = new System.Drawing.Size(121, 33);
-            this.bunifuThinButton21.TabIndex = 11;
+            this.bunifuThinButton21.TabIndex = 8;
             this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
-            // 
-            // bunifuThinButton22
-            // 
-            this.bunifuThinButton22.ActiveBorderThickness = 1;
-            this.bunifuThinButton22.ActiveCornerRadius = 20;
-            this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.Transparent;
-            this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuThinButton22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton22.BackgroundImage")));
-            this.bunifuThinButton22.ButtonText = "Thoát";
-            this.bunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton22.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.IdleBorderThickness = 1;
-            this.bunifuThinButton22.IdleCornerRadius = 20;
-            this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.Transparent;
-            this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.Location = new System.Drawing.Point(425, 398);
-            this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton22.Name = "bunifuThinButton22";
-            this.bunifuThinButton22.Size = new System.Drawing.Size(125, 34);
-            this.bunifuThinButton22.TabIndex = 13;
-            this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuThinButton22.Click += new System.EventHandler(this.bunifuThinButton22_Click);
-            // 
-            // txtEmail1
-            // 
-            this.txtEmail1.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtEmail1.Location = new System.Drawing.Point(443, 92);
-            this.txtEmail1.Name = "txtEmail1";
-            this.txtEmail1.Size = new System.Drawing.Size(163, 20);
-            this.txtEmail1.TabIndex = 7;
             // 
             // picture1
             // 
             this.picture1.Image = ((System.Drawing.Image)(resources.GetObject("picture1.Image")));
-            this.picture1.Location = new System.Drawing.Point(443, 279);
+            this.picture1.Location = new System.Drawing.Point(146, 251);
             this.picture1.Name = "picture1";
-            this.picture1.Size = new System.Drawing.Size(107, 101);
+            this.picture1.Size = new System.Drawing.Size(121, 116);
             this.picture1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picture1.TabIndex = 32;
             this.picture1.TabStop = false;
@@ -367,11 +251,11 @@
             this.ChonAnh.IdleFillColor = System.Drawing.Color.White;
             this.ChonAnh.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.ChonAnh.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.ChonAnh.Location = new System.Drawing.Point(288, 398);
+            this.ChonAnh.Location = new System.Drawing.Point(295, 398);
             this.ChonAnh.Margin = new System.Windows.Forms.Padding(5);
             this.ChonAnh.Name = "ChonAnh";
             this.ChonAnh.Size = new System.Drawing.Size(125, 34);
-            this.ChonAnh.TabIndex = 12;
+            this.ChonAnh.TabIndex = 9;
             this.ChonAnh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ChonAnh.Click += new System.EventHandler(this.bunifuThinButton23_Click);
             // 
@@ -386,6 +270,77 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // txtFullName
+            // 
+            this.txtFullName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFullName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtFullName.HintForeColor = System.Drawing.Color.Empty;
+            this.txtFullName.HintText = "";
+            this.txtFullName.isPassword = false;
+            this.txtFullName.LineFocusedColor = System.Drawing.Color.Aqua;
+            this.txtFullName.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtFullName.LineMouseHoverColor = System.Drawing.Color.Aqua;
+            this.txtFullName.LineThickness = 3;
+            this.txtFullName.Location = new System.Drawing.Point(146, 78);
+            this.txtFullName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(179, 30);
+            this.txtFullName.TabIndex = 1;
+            this.txtFullName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtFullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFullName_KeyPress);
+            // 
+            // txtAge
+            // 
+            this.txtAge.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAge.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtAge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtAge.HintForeColor = System.Drawing.Color.Empty;
+            this.txtAge.HintText = "";
+            this.txtAge.isPassword = false;
+            this.txtAge.LineFocusedColor = System.Drawing.Color.Aqua;
+            this.txtAge.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtAge.LineMouseHoverColor = System.Drawing.Color.Aqua;
+            this.txtAge.LineThickness = 3;
+            this.txtAge.Location = new System.Drawing.Point(444, 78);
+            this.txtAge.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAge.Name = "txtAge";
+            this.txtAge.Size = new System.Drawing.Size(120, 30);
+            this.txtAge.TabIndex = 5;
+            this.txtAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAge_KeyPress);
+            // 
+            // txtSdt
+            // 
+            this.txtSdt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSdt.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtSdt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSdt.HintForeColor = System.Drawing.Color.Empty;
+            this.txtSdt.HintText = "";
+            this.txtSdt.isPassword = false;
+            this.txtSdt.LineFocusedColor = System.Drawing.Color.Aqua;
+            this.txtSdt.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtSdt.LineMouseHoverColor = System.Drawing.Color.Aqua;
+            this.txtSdt.LineThickness = 3;
+            this.txtSdt.Location = new System.Drawing.Point(146, 127);
+            this.txtSdt.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSdt.Name = "txtSdt";
+            this.txtSdt.Size = new System.Drawing.Size(179, 30);
+            this.txtSdt.TabIndex = 2;
+            this.txtSdt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSdt_KeyPress);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(616, 382);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(67, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 38;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // AddMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,29 +348,23 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(684, 434);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.txtSdt);
+            this.Controls.Add(this.txtAge);
+            this.Controls.Add(this.txtFullName);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ChonAnh);
             this.Controls.Add(this.picture1);
-            this.Controls.Add(this.txtEmail1);
-            this.Controls.Add(this.bunifuThinButton22);
             this.Controls.Add(this.bunifuThinButton21);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.bunifuDatepicker2);
-            this.Controls.Add(this.txtFullName);
-            this.Controls.Add(this.bunifuDatepicker1);
             this.Controls.Add(this.rbFemale);
             this.Controls.Add(this.rbMale);
-            this.Controls.Add(this.txtSdt);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bunifuCustomLabel1);
             this.ForeColor = System.Drawing.Color.Black;
@@ -427,6 +376,7 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddMember_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.picture1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,28 +386,22 @@
 
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtSdt;
         private System.Windows.Forms.RadioButton rbMale;
         private System.Windows.Forms.RadioButton rbFemale;
-        private Bunifu.Framework.UI.BunifuDatepicker bunifuDatepicker1;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtFullName;
-        private Bunifu.Framework.UI.BunifuDatepicker bunifuDatepicker2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label txtEmail;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RichTextBox txtAddress;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox2;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtEmail1;
         private System.Windows.Forms.PictureBox picture1;
         private Bunifu.Framework.UI.BunifuThinButton2 ChonAnh;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtFullName;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtAge;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtSdt;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -48,7 +48,8 @@ namespace Gym_management
         private void AddMember_Load(object sender, EventArgs e)
         {
             rbFemale.Checked = true;    
-
+            comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -109,15 +110,9 @@ namespace Gym_management
         {
             try
             {
-                if (txtFullName.Text == "" || txtAddress.Text == "" || txtEmail1.Text == "" || txtSdt.Text == "")
+                if (txtFullName.Text == "" || txtAge.Text == ""  || txtSdt.Text == "")
                     throw new Exception("Vui lòng nhập đủ thông tin !");
-                if (txtSdt.TextLength < 10)
-                    throw new Exception("Số điện thoại không hợp lệ");
                 
-                if (!(txtFullName.TextLength > 3 && txtFullName.TextLength < 100))
-                    throw new Exception("Tên quá dài hoặc quá ngắn");
-                if (!txtEmail1.Text.Contains("@gmail.com"))
-                    throw new Exception("Sai dinh dang email");
 
                 if (passControl != null)
                 {
@@ -205,6 +200,43 @@ namespace Gym_management
             {
                 this.Close();
             }
+        }
+
+        private void txtEmail1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFullName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Tên chỉ có thể nhập chữ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtSdt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Số điện thoại chỉ được phép nhập số", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtAge_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Tuổi chỉ được phép nhập số", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
