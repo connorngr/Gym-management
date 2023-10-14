@@ -24,5 +24,12 @@ namespace Gym_management
         {
             Close();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Hide();
+            FormMain formMain = new FormMain();
+            formMain.Show();
+        }
     }
 }

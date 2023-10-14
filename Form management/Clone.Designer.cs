@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMember));
+            this.btnBack = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.BtnUpdate = new Bunifu.Framework.UI.BunifuThinButton2();
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.txtAmount = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtPhone = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -43,9 +45,59 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnReset = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnBack = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.BtnUpdate = new Bunifu.Framework.UI.BunifuThinButton2();
             this.SuspendLayout();
+            // 
+            // btnBack
+            // 
+            this.btnBack.ActiveBorderThickness = 1;
+            this.btnBack.ActiveCornerRadius = 20;
+            this.btnBack.ActiveFillColor = System.Drawing.Color.RoyalBlue;
+            this.btnBack.ActiveForecolor = System.Drawing.Color.White;
+            this.btnBack.ActiveLineColor = System.Drawing.Color.Snow;
+            this.btnBack.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
+            this.btnBack.ButtonText = "Back";
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnBack.IdleBorderThickness = 1;
+            this.btnBack.IdleCornerRadius = 20;
+            this.btnBack.IdleFillColor = System.Drawing.Color.White;
+            this.btnBack.IdleForecolor = System.Drawing.Color.RoyalBlue;
+            this.btnBack.IdleLineColor = System.Drawing.Color.RoyalBlue;
+            this.btnBack.Location = new System.Drawing.Point(665, 453);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(5);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(119, 59);
+            this.btnBack.TabIndex = 21;
+            this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // BtnUpdate
+            // 
+            this.BtnUpdate.ActiveBorderThickness = 1;
+            this.BtnUpdate.ActiveCornerRadius = 20;
+            this.BtnUpdate.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.BtnUpdate.ActiveForecolor = System.Drawing.Color.White;
+            this.BtnUpdate.ActiveLineColor = System.Drawing.Color.Snow;
+            this.BtnUpdate.BackColor = System.Drawing.SystemColors.Control;
+            this.BtnUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnUpdate.BackgroundImage")));
+            this.BtnUpdate.ButtonText = "Add";
+            this.BtnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUpdate.ForeColor = System.Drawing.Color.SeaGreen;
+            this.BtnUpdate.IdleBorderThickness = 1;
+            this.BtnUpdate.IdleCornerRadius = 20;
+            this.BtnUpdate.IdleFillColor = System.Drawing.Color.White;
+            this.BtnUpdate.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.BtnUpdate.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnUpdate.Location = new System.Drawing.Point(739, 384);
+            this.BtnUpdate.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnUpdate.Name = "BtnUpdate";
+            this.BtnUpdate.Size = new System.Drawing.Size(119, 59);
+            this.BtnUpdate.TabIndex = 19;
+            this.BtnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // cmbGender
             // 
@@ -65,7 +117,7 @@
             this.txtAmount.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtAmount.HintForeColor = System.Drawing.Color.Empty;
-            this.txtAmount.HintText = "Amount";
+            this.txtAmount.HintText = "";
             this.txtAmount.isPassword = false;
             this.txtAmount.LineFocusedColor = System.Drawing.Color.Blue;
             this.txtAmount.LineIdleColor = System.Drawing.Color.DodgerBlue;
@@ -84,16 +136,16 @@
             this.txtPhone.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtPhone.HintForeColor = System.Drawing.Color.Empty;
-            this.txtPhone.HintText = "Member\'s phone number";
+            this.txtPhone.HintText = "";
             this.txtPhone.isPassword = false;
             this.txtPhone.LineFocusedColor = System.Drawing.Color.Blue;
             this.txtPhone.LineIdleColor = System.Drawing.Color.DodgerBlue;
             this.txtPhone.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.txtPhone.LineThickness = 4;
-            this.txtPhone.Location = new System.Drawing.Point(562, 141);
+            this.txtPhone.Location = new System.Drawing.Point(584, 141);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(296, 54);
+            this.txtPhone.Size = new System.Drawing.Size(274, 54);
             this.txtPhone.TabIndex = 14;
             this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -103,16 +155,16 @@
             this.txtAge.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtAge.HintForeColor = System.Drawing.Color.Empty;
-            this.txtAge.HintText = "Member\'s age";
+            this.txtAge.HintText = "";
             this.txtAge.isPassword = false;
             this.txtAge.LineFocusedColor = System.Drawing.Color.Blue;
             this.txtAge.LineIdleColor = System.Drawing.Color.DodgerBlue;
             this.txtAge.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.txtAge.LineThickness = 4;
-            this.txtAge.Location = new System.Drawing.Point(562, 294);
+            this.txtAge.Location = new System.Drawing.Point(583, 285);
             this.txtAge.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtAge.Name = "txtAge";
-            this.txtAge.Size = new System.Drawing.Size(296, 56);
+            this.txtAge.Size = new System.Drawing.Size(274, 56);
             this.txtAge.TabIndex = 16;
             this.txtAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -122,7 +174,7 @@
             this.txtName.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtName.HintForeColor = System.Drawing.Color.Empty;
-            this.txtName.HintText = "Member\'s name";
+            this.txtName.HintText = "";
             this.txtName.isPassword = false;
             this.txtName.LineFocusedColor = System.Drawing.Color.Blue;
             this.txtName.LineIdleColor = System.Drawing.Color.DodgerBlue;
@@ -257,58 +309,6 @@
             this.btnReset.TabIndex = 22;
             this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.ActiveBorderThickness = 1;
-            this.btnBack.ActiveCornerRadius = 20;
-            this.btnBack.ActiveFillColor = System.Drawing.Color.RoyalBlue;
-            this.btnBack.ActiveForecolor = System.Drawing.Color.White;
-            this.btnBack.ActiveLineColor = System.Drawing.Color.Snow;
-            this.btnBack.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
-            this.btnBack.ButtonText = "Back";
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btnBack.IdleBorderThickness = 1;
-            this.btnBack.IdleCornerRadius = 20;
-            this.btnBack.IdleFillColor = System.Drawing.Color.White;
-            this.btnBack.IdleForecolor = System.Drawing.Color.RoyalBlue;
-            this.btnBack.IdleLineColor = System.Drawing.Color.RoyalBlue;
-            this.btnBack.Location = new System.Drawing.Point(665, 453);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(5);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(119, 59);
-            this.btnBack.TabIndex = 21;
-            this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // BtnUpdate
-            // 
-            this.BtnUpdate.ActiveBorderThickness = 1;
-            this.BtnUpdate.ActiveCornerRadius = 20;
-            this.BtnUpdate.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.BtnUpdate.ActiveForecolor = System.Drawing.Color.White;
-            this.BtnUpdate.ActiveLineColor = System.Drawing.Color.Snow;
-            this.BtnUpdate.BackColor = System.Drawing.SystemColors.Control;
-            this.BtnUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnUpdate.BackgroundImage")));
-            this.BtnUpdate.ButtonText = "Add";
-            this.BtnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnUpdate.ForeColor = System.Drawing.Color.SeaGreen;
-            this.BtnUpdate.IdleBorderThickness = 1;
-            this.BtnUpdate.IdleCornerRadius = 20;
-            this.BtnUpdate.IdleFillColor = System.Drawing.Color.White;
-            this.BtnUpdate.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.BtnUpdate.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnUpdate.Location = new System.Drawing.Point(739, 384);
-            this.BtnUpdate.Margin = new System.Windows.Forms.Padding(5);
-            this.BtnUpdate.Name = "BtnUpdate";
-            this.BtnUpdate.Size = new System.Drawing.Size(119, 59);
-            this.BtnUpdate.TabIndex = 19;
-            this.BtnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // AddMember
             // 
