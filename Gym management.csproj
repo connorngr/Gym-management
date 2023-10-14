@@ -36,9 +36,18 @@
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>C:\Users\Connor\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,16 +59,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DoiTen.cs">
+    <Compile Include="AddMember.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoiTen.Designer.cs">
-      <DependentUpon>DoiTen.cs</DependentUpon>
+    <Compile Include="AddMember.Designer.cs">
+      <DependentUpon>AddMember.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DoiTen.resx">
-      <DependentUpon>DoiTen.cs</DependentUpon>
+    <Compile Include="Update&amp;DEL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update&amp;DEL.Designer.cs">
+      <DependentUpon>Update&amp;DEL.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddMember.resx">
+      <DependentUpon>AddMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -70,6 +85,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Update&amp;DEL.resx">
+      <DependentUpon>Update&amp;DEL.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -82,6 +101,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
