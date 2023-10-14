@@ -21,35 +21,34 @@ namespace Gym_management
         {
 
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void bunifuThinButton24_Click(object sender, EventArgs e)
-        {
-            Payment pm= new Payment();
-            pm.Show();
-            this.Hide();
-        }
-
         private void FormMain_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        private void bunifuThinButtonAddMember_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Chưa cập nhật! Vui lòng quay lại sau.");
         }
-
-        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        private void bunifuThinButtonPayment_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chưa cập nhật! Vui lòng quay lại sau.");
+            Payment pm = new Payment();
+            pm.Show();
+            this.Hide();
         }
 
-        private void bunifuThinButton23_Click(object sender, EventArgs e)
+        private void labExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void bunifuThinButtonUpdateDeleteMember_Click(object sender, EventArgs e)
+        {
+            UpdateDelete pm = new UpdateDelete();
+            pm.Show();
+            this.Hide();
+        }
+
+        private void bunifuThinButtonShowAll_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Chưa cập nhật!. Vui lòng quay lại sau.");
         }

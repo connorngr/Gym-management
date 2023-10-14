@@ -1,0 +1,7 @@
+so sanh:
+select count(*) from PaymentTbl where PMember='"+numcb.SelectedValue.ToString()+"' and PMonth='"+payperiode+"'"
+
+PId
+PMonth
+PMember -> PPhone
+PAmount

@@ -1,0 +1,2 @@
+﻿E:\TH_LT_Windows\DoAn\Gym management.csproj : error  : The project file could not be loaded. Name cannot begin with the '<' character, hexadecimal value 0x3C. Line 218, position 2.  E:\TH_LT_Windows\DoAn\Gym management.csproj
+
