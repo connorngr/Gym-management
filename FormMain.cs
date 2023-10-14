@@ -29,16 +29,8 @@ namespace Gym_management
 
         private void bunifuThinButton24_Click(object sender, EventArgs e)
         {
-            /*Payment pm= new Payment();*/
-            /*pm.Show();*/
-            this.Hide();
+            MessageBox.Show("Not available");
         }
-
-        private void FormMain_Load(object sender, EventArgs e)
-        {
-
-        }
-
 
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)

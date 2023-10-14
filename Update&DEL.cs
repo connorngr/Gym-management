@@ -18,11 +18,23 @@ namespace Gym_management
             InitializeComponent();
         }
 
-    SqlConnection conn = new SqlConnection(@"Data Source=CONNOR-PC;Initial Catalog=GymDB;Integrated Security=True");
-
+        SqlConnection conn = new SqlConnection(@"Data Source=CONNOR-PC;Initial Catalog=GymDB;Integrated Security=True");
+        private void Populate()
+        {
+            conn.Open();
+            string query = "select ID, Name, Phone, Gender, Age from Member";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            SqlCommandBuilder builder = new SqlCommandBuilder();
+            var ds = new DataSet();
+            adapter.Fill(ds);
+            MemberGrid.DataSource = ds.Tables[0];
+            MemberGrid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            MemberGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            conn.Close();
+        }
         private void label8_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -30,6 +42,19 @@ namespace Gym_management
             Hide();
             FormMain formMain = new FormMain();
             formMain.Show();
+        }
+
+        private void Update_DEL_Load(object sender, EventArgs e)
+        {
+            Populate();
+        }
+
+        private void MemberGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtName.Text = MemberGrid.SelectedRows[0].Cells[1].Value.ToString();
+            txtPhone.Text = MemberGrid.SelectedRows[0].Cells[2].Value.ToString();
+            cmbGender.Text = MemberGrid.SelectedRows[0].Cells[3].Value.ToString();
+            txtAge.Text = MemberGrid.SelectedRows[0].Cells[4].Value.ToString();
         }
     }
 }

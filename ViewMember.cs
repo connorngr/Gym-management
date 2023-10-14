@@ -21,12 +21,13 @@ namespace Gym_management
         private void Populate()
         {
             conn.Open();
-            string query = "select * from Member";
+            string query = "select ID, Name, Phone, Gender, Age from Member";
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             SqlCommandBuilder builder = new SqlCommandBuilder();
             var ds = new DataSet();
             adapter.Fill(ds);
-            Member.DataSource = ds.Tables[0];
+            MemberGrid.DataSource = ds.Tables[0];
+            MemberGrid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;   
             conn.Close();
         }
         private void label8_Click(object sender, EventArgs e)
