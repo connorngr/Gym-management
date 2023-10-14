@@ -15,6 +15,7 @@ namespace Gym_management
         public ViewMember()
         {
             InitializeComponent();
+            this.MaximizeBox = false; //Vô hiệu hoá chức năng mở rộng của form
         }
 
         private void ViewMember_Load(object sender, EventArgs e)
@@ -33,7 +34,7 @@ namespace Gym_management
             }
             else
             {
-                MessageBox.Show("Vui lòng chỉ nhập số điện thoại.");
+                MessageBox.Show("Vui lòng nhập thông tin và chỉ nhập số điện thoại.");
             }
         }
 
@@ -46,6 +47,20 @@ namespace Gym_management
                 //Đặt giá trị tìm kiếm về ban đầu
                 txtSearch.Text ="";
             }           
+        }
+
+        private void ViewMember_FormClosing(object sender, FormClosingEventArgs e) //Luôn hiển thị hộp thoại xác nhận khi đóng form
+        {
+            System.Windows.Forms.DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", System.Windows.Forms.MessageBoxButtons.YesNo);
+            if (result == System.Windows.Forms.DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
