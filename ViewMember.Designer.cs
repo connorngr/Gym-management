@@ -61,7 +61,7 @@
             this.btnBack.IdleFillColor = System.Drawing.Color.White;
             this.btnBack.IdleForecolor = System.Drawing.Color.RoyalBlue;
             this.btnBack.IdleLineColor = System.Drawing.Color.RoyalBlue;
-            this.btnBack.Location = new System.Drawing.Point(481, 565);
+            this.btnBack.Location = new System.Drawing.Point(28, 71);
             this.btnBack.Margin = new System.Windows.Forms.Padding(5);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(119, 59);
@@ -212,7 +212,7 @@
             this.MemberGrid.RowHeadersWidth = 51;
             this.MemberGrid.RowTemplate.Height = 28;
             this.MemberGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MemberGrid.Size = new System.Drawing.Size(1030, 403);
+            this.MemberGrid.Size = new System.Drawing.Size(1030, 455);
             this.MemberGrid.TabIndex = 23;
             this.MemberGrid.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.MemberGrid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;

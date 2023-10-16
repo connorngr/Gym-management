@@ -27,12 +27,11 @@ namespace Gym_management
             txtAge.Text = string.Empty;
             txtName.Text = string.Empty;
             txtAge.Text = string.Empty;
-            txtAmount.Text = string.Empty;
             txtPhone.Text = string.Empty;
         }
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtName.Text==""||txtPhone.Text==""||txtAmount.Text==""||txtAmount.Text=="")
+            if (txtName.Text==""||txtPhone.Text==""||txtAge.Text=="")
             {
                 MessageBox.Show("Missing information", "Warning");
             }
@@ -40,10 +39,23 @@ namespace Gym_management
             {
                 try
                 {
+                    if (txtPhone.Text.Length<10 || txtPhone.Text.Length>13)
+                    {
+                        throw new Exception("Check your phone number again");
+                    }
+                    bool checkAge = int.TryParse(txtAge.Text, out int age);
+                    if (checkAge!=true)
+                    {
+                        throw new Exception("Invalid age");
+                    }
+                    if (int.Parse(txtAge.Text)<=0 || int.Parse(txtAge.Text) > 100)
+                    {
+                        throw new Exception("Invalid age");
+                    }
                     conn.Open();
                     string query = "insert into Member values('"+txtName.Text+"'," +
                         "'"+txtPhone.Text+"', '"+cmbGender.Text+"'," +
-                        "'"+txtAge.Text+"', '"+txtAmount.Text+"')";
+                        "'"+txtAge.Text+"')";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Member successfully added");

@@ -30,12 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMember));
             this.cmbGender = new System.Windows.Forms.ComboBox();
-            this.txtAmount = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtPhone = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtAge = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -58,25 +56,6 @@
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(144, 33);
             this.cmbGender.TabIndex = 17;
-            // 
-            // txtAmount
-            // 
-            this.txtAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAmount.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtAmount.HintForeColor = System.Drawing.Color.Empty;
-            this.txtAmount.HintText = "Amount";
-            this.txtAmount.isPassword = false;
-            this.txtAmount.LineFocusedColor = System.Drawing.Color.Blue;
-            this.txtAmount.LineIdleColor = System.Drawing.Color.DodgerBlue;
-            this.txtAmount.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.txtAmount.LineThickness = 4;
-            this.txtAmount.Location = new System.Drawing.Point(80, 416);
-            this.txtAmount.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(274, 54);
-            this.txtAmount.TabIndex = 15;
-            this.txtAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txtPhone
             // 
@@ -146,18 +125,6 @@
             this.label3.Size = new System.Drawing.Size(89, 36);
             this.label3.TabIndex = 11;
             this.label3.Text = "Gender";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.Control;
-            this.label6.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label6.Location = new System.Drawing.Point(75, 384);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(185, 36);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Monthly amount";
             // 
             // label4
             // 
@@ -250,7 +217,7 @@
             this.btnReset.IdleFillColor = System.Drawing.Color.White;
             this.btnReset.IdleForecolor = System.Drawing.Color.Crimson;
             this.btnReset.IdleLineColor = System.Drawing.Color.Crimson;
-            this.btnReset.Location = new System.Drawing.Point(583, 384);
+            this.btnReset.Location = new System.Drawing.Point(562, 384);
             this.btnReset.Margin = new System.Windows.Forms.Padding(5);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(119, 59);
@@ -276,7 +243,7 @@
             this.btnBack.IdleFillColor = System.Drawing.Color.White;
             this.btnBack.IdleForecolor = System.Drawing.Color.RoyalBlue;
             this.btnBack.IdleLineColor = System.Drawing.Color.RoyalBlue;
-            this.btnBack.Location = new System.Drawing.Point(665, 453);
+            this.btnBack.Location = new System.Drawing.Point(80, 384);
             this.btnBack.Margin = new System.Windows.Forms.Padding(5);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(119, 59);
@@ -314,17 +281,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 551);
+            this.ClientSize = new System.Drawing.Size(950, 494);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.BtnUpdate);
             this.Controls.Add(this.cmbGender);
-            this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtAge);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label7);
@@ -346,12 +311,10 @@
         private Bunifu.Framework.UI.BunifuThinButton2 btnBack;
         private Bunifu.Framework.UI.BunifuThinButton2 BtnUpdate;
         private System.Windows.Forms.ComboBox cmbGender;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtAmount;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtPhone;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtAge;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;

@@ -24,7 +24,6 @@ namespace Gym_management
             conn.Open();
             string query = "select ID, Name, Phone, Gender, Age from Member";
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-            SqlCommandBuilder builder = new SqlCommandBuilder();
             var ds = new DataSet();
             adapter.Fill(ds);
             MemberGrid.DataSource = ds.Tables[0];
@@ -48,13 +47,67 @@ namespace Gym_management
         {
             Populate();
         }
-
+        int key = 0;
         private void MemberGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            key = int.Parse(MemberGrid.SelectedRows[0].Cells[0].Value.ToString());
             txtName.Text = MemberGrid.SelectedRows[0].Cells[1].Value.ToString();
             txtPhone.Text = MemberGrid.SelectedRows[0].Cells[2].Value.ToString();
             cmbGender.Text = MemberGrid.SelectedRows[0].Cells[3].Value.ToString();
             txtAge.Text = MemberGrid.SelectedRows[0].Cells[4].Value.ToString();
+             
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            if (key == 0)
+            {
+                MessageBox.Show("Select member to delete");
+            }
+            else
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "delete from Member where ID=" + key + ";";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Member deleted successfully");
+                    conn.Close();
+                    Populate();
+                    key = 0;
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            if (key == 0 || txtName.Text == "" || txtPhone.Text == ""||txtAge.Text == "")
+            {
+                MessageBox.Show("Missing information");
+            }
+            else
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "update Member set Name='" + txtName.Text + "', Phone='" + txtPhone.Text + "'," +
+    " Gender='" + cmbGender.Text + "', Age='" + txtAge.Text + "' where ID=" + key + ";";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Member updated successfully");
+                    conn.Close();
+                    Populate();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
