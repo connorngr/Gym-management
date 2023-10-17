@@ -22,7 +22,7 @@ namespace Gym_management
         private void Populate()
         {
             conn.Open();
-            string query = "select ID, Name, Phone, Gender, Age from Member";
+            string query = "select * from Member";
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             var ds = new DataSet();
             adapter.Fill(ds);
@@ -69,7 +69,7 @@ namespace Gym_management
                 try
                 {
                     conn.Open();
-                    string query = "delete from Member where ID=" + key + ";";
+                    string query = "delete from Member where MemID=" + key + ";";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Member deleted successfully");
@@ -96,7 +96,7 @@ namespace Gym_management
                 {
                     conn.Open();
                     string query = "update Member set Name='" + txtName.Text + "', Phone='" + txtPhone.Text + "'," +
-    " Gender='" + cmbGender.Text + "', Age='" + txtAge.Text + "' where ID=" + key + ";";
+    " Gender='" + cmbGender.Text + "', Age='" + txtAge.Text + "' where MemID=" + key + ";";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Member updated successfully");

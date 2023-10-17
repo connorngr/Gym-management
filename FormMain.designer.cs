@@ -33,7 +33,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnAdd = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnAddMem = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuThinButton24 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnPayment = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -47,7 +47,7 @@
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnAddMem);
-            this.panel1.Controls.Add(this.bunifuThinButton24);
+            this.panel1.Controls.Add(this.btnPayment);
             this.panel1.Controls.Add(this.bunifuThinButton22);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -119,31 +119,31 @@
             this.btnAddMem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAddMem.Click += new System.EventHandler(this.btnAddMem_Click);
             // 
-            // bunifuThinButton24
+            // btnPayment
             // 
-            this.bunifuThinButton24.ActiveBorderThickness = 1;
-            this.bunifuThinButton24.ActiveCornerRadius = 20;
-            this.bunifuThinButton24.ActiveFillColor = System.Drawing.Color.LightSeaGreen;
-            this.bunifuThinButton24.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton24.ActiveLineColor = System.Drawing.Color.LightSeaGreen;
-            this.bunifuThinButton24.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuThinButton24.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton24.BackgroundImage")));
-            this.bunifuThinButton24.ButtonText = "Thanh Toán";
-            this.bunifuThinButton24.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton24.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuThinButton24.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton24.IdleBorderThickness = 1;
-            this.bunifuThinButton24.IdleCornerRadius = 30;
-            this.bunifuThinButton24.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton24.IdleForecolor = System.Drawing.Color.LightSeaGreen;
-            this.bunifuThinButton24.IdleLineColor = System.Drawing.Color.White;
-            this.bunifuThinButton24.Location = new System.Drawing.Point(826, 6);
-            this.bunifuThinButton24.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.bunifuThinButton24.Name = "bunifuThinButton24";
-            this.bunifuThinButton24.Size = new System.Drawing.Size(173, 58);
-            this.bunifuThinButton24.TabIndex = 4;
-            this.bunifuThinButton24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuThinButton24.Click += new System.EventHandler(this.bunifuThinButton24_Click);
+            this.btnPayment.ActiveBorderThickness = 1;
+            this.btnPayment.ActiveCornerRadius = 20;
+            this.btnPayment.ActiveFillColor = System.Drawing.Color.LightSeaGreen;
+            this.btnPayment.ActiveForecolor = System.Drawing.Color.White;
+            this.btnPayment.ActiveLineColor = System.Drawing.Color.LightSeaGreen;
+            this.btnPayment.BackColor = System.Drawing.SystemColors.Control;
+            this.btnPayment.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPayment.BackgroundImage")));
+            this.btnPayment.ButtonText = "Thanh Toán";
+            this.btnPayment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPayment.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold);
+            this.btnPayment.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnPayment.IdleBorderThickness = 1;
+            this.btnPayment.IdleCornerRadius = 30;
+            this.btnPayment.IdleFillColor = System.Drawing.Color.White;
+            this.btnPayment.IdleForecolor = System.Drawing.Color.LightSeaGreen;
+            this.btnPayment.IdleLineColor = System.Drawing.Color.White;
+            this.btnPayment.Location = new System.Drawing.Point(826, 6);
+            this.btnPayment.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.btnPayment.Name = "btnPayment";
+            this.btnPayment.Size = new System.Drawing.Size(173, 58);
+            this.btnPayment.TabIndex = 4;
+            this.btnPayment.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // bunifuThinButton22
             // 
@@ -223,7 +223,7 @@
         private Bunifu.Framework.UI.BunifuThinButton2 btnAddMem;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
         private Bunifu.Framework.UI.BunifuThinButton2 btnAdd;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton24;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnPayment;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;

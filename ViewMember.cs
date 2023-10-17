@@ -21,7 +21,7 @@ namespace Gym_management
         private void Populate()
         {
             conn.Open();
-            string query = "select ID, Name, Phone, Gender, Age from Member";
+            string query = "select * from Member";
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             SqlCommandBuilder builder = new SqlCommandBuilder();
             var ds = new DataSet();
@@ -45,6 +45,24 @@ namespace Gym_management
             Hide();
             FormMain formMain = new FormMain();
             formMain.Show();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            string query = "select * from Member where Name LIKE '%"+txtSearchName.Text+"%'";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            var ds = new DataSet();
+            adapter.Fill(ds);
+            //?
+            MemberGrid.DataSource = ds.Tables[0];
+            conn.Close();
+
+        }
+
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            Populate();
         }
     }
 }

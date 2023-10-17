@@ -26,10 +26,7 @@ namespace Gym_management
             Application.Exit();
         }
 
-        private void bunifuThinButton24_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Not available");
-        }
+
 
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)
@@ -53,6 +50,13 @@ namespace Gym_management
             ViewMember viewMember = new ViewMember();
             viewMember.Show();
             Hide();
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Payment payment = new Payment();
+            payment.Show();
         }
     }
 }
