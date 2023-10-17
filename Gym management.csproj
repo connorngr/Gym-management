@@ -69,6 +69,7 @@
     <Compile Include="AddMember.Designer.cs">
       <DependentUpon>AddMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBString.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>

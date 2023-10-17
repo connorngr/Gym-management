@@ -18,7 +18,13 @@ namespace Gym_management
             InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=CONNOR-PC;Initial Catalog=GymDB;Integrated Security=True");
+        SqlConnection conn = new SqlConnection();
+        public void FetchString()
+        {
+            DBString Dbstring = new DBString();
+            string db = Dbstring.getDB();
+            conn = new SqlConnection(db);
+        }
         private void Populate()
         {
             conn.Open();
@@ -45,6 +51,7 @@ namespace Gym_management
 
         private void Update_DEL_Load(object sender, EventArgs e)
         {
+            FetchString();
             Populate();
         }
         int key = 0;

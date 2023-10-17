@@ -18,27 +18,33 @@ namespace Gym_management
         {
             InitializeComponent();
         }
-        SqlConnection Con = new SqlConnection(@"Data Source=CONNOR-PC;Initial Catalog=GymDB;Integrated Security=True");
+        SqlConnection conn = new SqlConnection();
+        public void FetchString()
+        {
+            DBString Dbstring = new DBString();
+            string db = Dbstring.getDB();
+            conn = new SqlConnection(db);
+        }
 
-        
         private void populate()
         {
-            Con.Open();
+            conn.Open();
             SqlDataAdapter sda = new SqlDataAdapter("select Payment.MemID as ID, " +
                 "Member.Name, Member.Phone, Payment.Date, Payment.Amount from " +
-                "Payment inner join Member on Payment.MemID = Member.MemID", Con);
+                "Payment inner join Member on Payment.MemID = Member.MemID", conn);
             var ds = new DataSet();
             sda.Fill(ds);
             MemberGrid.DataSource = ds.Tables[0];
             MemberGrid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             MemberGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Con.Close();
+            conn.Close();
         }
 
 
 
         private void Payment_Load(object sender, EventArgs e)
         {
+            FetchString();
             DTP.Format = DateTimePickerFormat.Custom;
             DTP.CustomFormat = "dd-MM-yyyy";
             populate();
@@ -72,10 +78,10 @@ namespace Gym_management
             else
             {
                 string Payperiod = DTP.Value.Month.ToString() + DTP.Value.Year.ToString();
-                Con.Open();
+                conn.Open();
                 //SqlAdapter is used to fill a dataset
                 SqlDataAdapter sda = new SqlDataAdapter("select count(*) from Payment where MemID = " +
-                    "'" + txtID.Text + "' and Date = '" + Payperiod + "'", Con);
+                    "'" + txtID.Text + "' and Date = '" + Payperiod + "'", conn);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 //txtTest.Text = dt.Rows[0][0].ToString(); // Co gia tri tra ve 1, ko co gia tri tra ve 0
@@ -91,7 +97,7 @@ namespace Gym_management
                     if (result == DialogResult.Yes)
                     {
                         string query = "insert into Payment values(" + txtID.Text + "," + Payperiod + "," + txtAmount.Text + ")";
-                        SqlCommand cmd = new SqlCommand(query, Con);
+                        SqlCommand cmd = new SqlCommand(query, conn);
                         try
                         {
                             cmd.ExecuteNonQuery();
@@ -107,7 +113,7 @@ namespace Gym_management
                     //related to Create / Read / Update / Delete
                                                          
                 }
-                Con.Close();
+                conn.Close();
                 populate();
             }
         }
