@@ -8,8 +8,8 @@ namespace Gym_management
 {
     public class DBString
     {
-        public string dB = 
-            @"Data Source=CONNOR-PC;Initial Catalog=GymDB;Integrated Security=True";
+        public string dB =
+            @"Data Source=NGHIA\SQLEXPRESS;Initial Catalog=GymDB;Integrated Security=True";
 
         public string getDB()
         {

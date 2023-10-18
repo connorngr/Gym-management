@@ -79,6 +79,7 @@ namespace Gym_management
         private void AddMember_Load(object sender, EventArgs e)
         {
             cmbGender.SelectedIndex = 0;
+            FetchString();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
