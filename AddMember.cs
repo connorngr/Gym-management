@@ -32,7 +32,7 @@ namespace Gym_management
         {
             txtAge.Text = string.Empty;
             txtName.Text = string.Empty;
-            txtAge.Text = string.Empty;
+            cmbGender.Text = string.Empty;
             txtPhone.Text = string.Empty;
         }
         private void BtnUpdate_Click(object sender, EventArgs e)
@@ -58,6 +58,14 @@ namespace Gym_management
                     {
                         throw new Exception("Invalid age");
                     }
+                    if (txtName.Text.Length > 50)
+                    {
+                        throw new Exception("Tên không hợp lệ. Vui lòng nhập dưới 50 ký tự.");
+                    }
+                    if (cmbGender.Text != "Male" && cmbGender.Text != "Female" )
+                    {
+                        throw new Exception("Giới tính chỉ nhận giá trị là 'Male' hoặc 'Female'.");
+                    }
                     conn.Open();
                     string query = "insert into Member values('"+txtName.Text+"'," +
                         "'"+txtPhone.Text+"', '"+cmbGender.Text+"'," +
@@ -81,7 +89,6 @@ namespace Gym_management
             cmbGender.SelectedIndex = 0;
             FetchString();
         }
-
         private void btnReset_Click(object sender, EventArgs e)
         {
             Blank_TextBox();

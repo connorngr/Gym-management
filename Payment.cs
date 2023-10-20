@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.Common;
+using System.Xml.Linq;
 
 namespace Gym_management
 {
@@ -34,14 +35,18 @@ namespace Gym_management
                 "Payment inner join Member on Payment.MemID = Member.MemID", conn);
             var ds = new DataSet();
             sda.Fill(ds);
-            MemberGrid.DataSource = ds.Tables[0];
-            MemberGrid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            MemberGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            if (ds.Tables[0].Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MemberGrid.DataSource = ds.Tables[0];
+                MemberGrid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                MemberGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
             conn.Close();
         }
-
-
-
         private void Payment_Load(object sender, EventArgs e)
         {
             FetchString();
@@ -54,9 +59,6 @@ namespace Gym_management
         {
             Application.Exit();
         }
-
-       
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             FormMain fm = new FormMain();
@@ -77,6 +79,23 @@ namespace Gym_management
             }
             else
             {
+                try
+                {
+                    bool checkAmount = long.TryParse(txtAmount.Text, out long Amount);
+                    if (checkAmount != true)
+                    {
+                        throw new Exception("Số tiền phải là số.");
+                    }
+                    if (Amount<0 || Amount>9999999999)
+                    {
+                        throw new Exception("Số tiền không thể lớn hơn 9.999.999.999 và không thể âm");
+                    }
+                    bool checkID = int.TryParse(txtID.Text, out int ID);
+                    if (checkID != true)
+                    {
+                        throw new Exception("Invalid ID.It should be 1 figure");
+                    }
+                
                 string Payperiod = DTP.Value.Month.ToString() + DTP.Value.Year.ToString();
                 conn.Open();
                 //SqlAdapter is used to fill a dataset
@@ -84,6 +103,7 @@ namespace Gym_management
                     "'" + txtID.Text + "' and Date = '" + Payperiod + "'", conn);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
+
                 //txtTest.Text = dt.Rows[0][0].ToString(); // Co gia tri tra ve 1, ko co gia tri tra ve 0
                 if (dt.Rows[0][0].ToString() == "1")
                 {
@@ -115,6 +135,11 @@ namespace Gym_management
                 }
                 conn.Close();
                 populate();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

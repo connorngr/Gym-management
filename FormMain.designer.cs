@@ -38,7 +38,8 @@
             this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnEquipment = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnAddEquipment = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnUpdateDeleteEquipment = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -100,7 +101,7 @@
             this.btnAdd.Location = new System.Drawing.Point(255, 5);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(5);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(174, 47);
+            this.btnAdd.Size = new System.Drawing.Size(174, 48);
             this.btnAdd.TabIndex = 3;
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -206,37 +207,65 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // btnEquipment
+            // btnAddEquipment
             // 
-            this.btnEquipment.ActiveBorderThickness = 1;
-            this.btnEquipment.ActiveCornerRadius = 20;
-            this.btnEquipment.ActiveFillColor = System.Drawing.Color.LightSeaGreen;
-            this.btnEquipment.ActiveForecolor = System.Drawing.Color.White;
-            this.btnEquipment.ActiveLineColor = System.Drawing.Color.LightSeaGreen;
-            this.btnEquipment.BackColor = System.Drawing.SystemColors.Control;
-            this.btnEquipment.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEquipment.BackgroundImage")));
-            this.btnEquipment.ButtonText = "Dụng cụ";
-            this.btnEquipment.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEquipment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnEquipment.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnEquipment.IdleBorderThickness = 1;
-            this.btnEquipment.IdleCornerRadius = 30;
-            this.btnEquipment.IdleFillColor = System.Drawing.Color.White;
-            this.btnEquipment.IdleForecolor = System.Drawing.Color.LightSeaGreen;
-            this.btnEquipment.IdleLineColor = System.Drawing.Color.White;
-            this.btnEquipment.Location = new System.Drawing.Point(697, 62);
-            this.btnEquipment.Margin = new System.Windows.Forms.Padding(5);
-            this.btnEquipment.Name = "btnEquipment";
-            this.btnEquipment.Size = new System.Drawing.Size(72, 47);
-            this.btnEquipment.TabIndex = 7;
-            this.btnEquipment.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAddEquipment.ActiveBorderThickness = 1;
+            this.btnAddEquipment.ActiveCornerRadius = 20;
+            this.btnAddEquipment.ActiveFillColor = System.Drawing.Color.LightSeaGreen;
+            this.btnAddEquipment.ActiveForecolor = System.Drawing.Color.White;
+            this.btnAddEquipment.ActiveLineColor = System.Drawing.Color.LightSeaGreen;
+            this.btnAddEquipment.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAddEquipment.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddEquipment.BackgroundImage")));
+            this.btnAddEquipment.ButtonText = "Thêm Dụng cụ";
+            this.btnAddEquipment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddEquipment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAddEquipment.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnAddEquipment.IdleBorderThickness = 1;
+            this.btnAddEquipment.IdleCornerRadius = 30;
+            this.btnAddEquipment.IdleFillColor = System.Drawing.Color.White;
+            this.btnAddEquipment.IdleForecolor = System.Drawing.Color.LightSeaGreen;
+            this.btnAddEquipment.IdleLineColor = System.Drawing.Color.White;
+            this.btnAddEquipment.Location = new System.Drawing.Point(697, 62);
+            this.btnAddEquipment.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAddEquipment.Name = "btnAddEquipment";
+            this.btnAddEquipment.Size = new System.Drawing.Size(72, 79);
+            this.btnAddEquipment.TabIndex = 7;
+            this.btnAddEquipment.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAddEquipment.Click += new System.EventHandler(this.btnEquipment_Click);
+            // 
+            // btnUpdateDeleteEquipment
+            // 
+            this.btnUpdateDeleteEquipment.ActiveBorderThickness = 1;
+            this.btnUpdateDeleteEquipment.ActiveCornerRadius = 20;
+            this.btnUpdateDeleteEquipment.ActiveFillColor = System.Drawing.Color.LightSeaGreen;
+            this.btnUpdateDeleteEquipment.ActiveForecolor = System.Drawing.Color.White;
+            this.btnUpdateDeleteEquipment.ActiveLineColor = System.Drawing.Color.LightSeaGreen;
+            this.btnUpdateDeleteEquipment.BackColor = System.Drawing.SystemColors.Control;
+            this.btnUpdateDeleteEquipment.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdateDeleteEquipment.BackgroundImage")));
+            this.btnUpdateDeleteEquipment.ButtonText = "Cập nhật và xóa dụng cụ";
+            this.btnUpdateDeleteEquipment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdateDeleteEquipment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnUpdateDeleteEquipment.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnUpdateDeleteEquipment.IdleBorderThickness = 1;
+            this.btnUpdateDeleteEquipment.IdleCornerRadius = 30;
+            this.btnUpdateDeleteEquipment.IdleFillColor = System.Drawing.Color.White;
+            this.btnUpdateDeleteEquipment.IdleForecolor = System.Drawing.Color.LightSeaGreen;
+            this.btnUpdateDeleteEquipment.IdleLineColor = System.Drawing.Color.White;
+            this.btnUpdateDeleteEquipment.Location = new System.Drawing.Point(697, 151);
+            this.btnUpdateDeleteEquipment.Margin = new System.Windows.Forms.Padding(5);
+            this.btnUpdateDeleteEquipment.Name = "btnUpdateDeleteEquipment";
+            this.btnUpdateDeleteEquipment.Size = new System.Drawing.Size(72, 115);
+            this.btnUpdateDeleteEquipment.TabIndex = 8;
+            this.btnUpdateDeleteEquipment.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnUpdateDeleteEquipment.Click += new System.EventHandler(this.btnUpdateDeleteEquipment_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 419);
-            this.Controls.Add(this.btnEquipment);
+            this.Controls.Add(this.btnUpdateDeleteEquipment);
+            this.Controls.Add(this.btnAddEquipment);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
@@ -263,6 +292,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
         private Guna.UI.Licensing.Licensing licensing1;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnEquipment;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnAddEquipment;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnUpdateDeleteEquipment;
     }
 }

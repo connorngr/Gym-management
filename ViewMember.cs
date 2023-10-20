@@ -28,15 +28,28 @@ namespace Gym_management
         
         private void Populate()
         {
-            conn.Open();
-            string query = "select * from Member";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-            SqlCommandBuilder builder = new SqlCommandBuilder();
-            var ds = new DataSet();
-            adapter.Fill(ds);
-            MemberGrid.DataSource = ds.Tables[0];
-            MemberGrid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;   
-            conn.Close();
+            try
+            {
+                conn.Open();
+                string query = "select * from Member";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                SqlCommandBuilder builder = new SqlCommandBuilder();
+                var ds = new DataSet();
+                adapter.Fill(ds);
+                if (ds.Tables[0].Rows.Count == 0)
+                {
+                    MessageBox.Show("Không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MemberGrid.DataSource = ds.Tables[0];
+                    MemberGrid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                }
+                conn.Close();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void label8_Click(object sender, EventArgs e)
         {
@@ -45,8 +58,8 @@ namespace Gym_management
 
         private void ViewMember_Load(object sender, EventArgs e)
         {
-            FetchString();
-            Populate();
+                FetchString();
+                Populate();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -63,10 +76,12 @@ namespace Gym_management
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             var ds = new DataSet();
             adapter.Fill(ds);
-            //?
             MemberGrid.DataSource = ds.Tables[0];
+            if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count == 0)
+            {
+                MessageBox.Show("The name you looked for isn't in the list.", "Confident");
+            }
             conn.Close();
-
         }
 
         private void BtnRefresh_Click(object sender, EventArgs e)

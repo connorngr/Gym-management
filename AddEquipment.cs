@@ -27,8 +27,8 @@ namespace Gym_management
 
         private void Equipment_Load(object sender, EventArgs e)
         {
-            cmbLocation.SelectedIndex = 0;
-            cmbCondition.SelectedIndex = 0;
+            cmbCondition.Text = string.Empty;
+            cmbLocation.Text = string.Empty;
             DTP.Format = DateTimePickerFormat.Custom;
             DTP.CustomFormat = "dd-MM-yyyy";
             FetchString();
@@ -39,8 +39,8 @@ namespace Gym_management
             txtQuantity.Text = string.Empty;
             txtPrice.Text = string.Empty;
             txtManufacturer.Text = string.Empty;
-            cmbCondition.SelectedIndex = -1;
-            cmbLocation.SelectedIndex = -1;
+            cmbCondition.Text = string.Empty;
+            cmbLocation.Text = string.Empty;
         }
 
         private void labExit_Click(object sender, EventArgs e)
@@ -74,11 +74,39 @@ namespace Gym_management
             {
                 try
                 {
-                    bool checkPrice = int.TryParse(txtPrice.Text, out price);
-                    
-                    if (price<=0 || price>= 2147483647 || price==-1) 
+                    bool checkAmount = long.TryParse(txtPrice.Text, out long Amount);
+                    if (checkAmount != true)
                     {
-                        throw new Exception("Check your price again. Price just from 0 to 2147483647");
+                        throw new Exception("Số tiền phải là số.");
+                    }
+                    if (Amount < 0 || Amount > 9999999999)
+                    {
+                        throw new Exception("Số tiền không thể lớn hơn 9.999.999.999 và không thể âm");
+                    }
+                    bool checkQuantity = int.TryParse(txtQuantity.Text, out int Quantity);
+                    if (checkQuantity != true)
+                    {
+                        throw new Exception("Số lượng phải là số.");
+                    }
+                    if (Quantity < 0 || Quantity > 9999999999)
+                    {
+                        throw new Exception("Số lượng không thể lớn hơn 2.147.483.647 và không thể âm");
+                    }
+                    if (txtName.Text.Length > 50)
+                    {
+                        throw new Exception("Tên không hợp lệ. Vui lòng nhập dưới 50 ký tự.");
+                    }
+                    if (txtManufacturer.Text.Length > 50)
+                    {
+                        throw new Exception("Tên nhà sản xuất không hợp lệ. Vui lòng nhập dưới 50 ký tự.");
+                    }
+                    if (cmbCondition.Text != "New" && cmbCondition.Text != "Old")
+                    {
+                        throw new Exception("Trang thái chỉ nhận giá trị 'Old' hoặc 'New'.");
+                    }
+                    if (cmbLocation.Text != "shelf number 1" && cmbLocation.Text != "shelf number 2" && cmbLocation.Text != "shelf number 3")
+                    {
+                        throw new Exception("Vị trí chỉ nhận giá trị 'shelf number 1' hoặc 'shelf number 2' hoặc 'shelf number 3'.");
                     }
                     conn.Open();
                     string query = "insert into Equipment values('" + txtName.Text + "'," + "'" + txtQuantity.Text + "'," +

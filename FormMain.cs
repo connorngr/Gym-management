@@ -58,5 +58,19 @@ namespace Gym_management
             Payment payment = new Payment();
             payment.Show();
         }
+
+        private void btnEquipment_Click(object sender, EventArgs e)
+        {
+            Hide();
+            AddEquipment addEquipment = new AddEquipment();
+            addEquipment.Show();
+        }
+
+        private void btnUpdateDeleteEquipment_Click(object sender, EventArgs e)
+        {
+            Hide();
+            UpdateDeleteEquipment updateDeleteEquipment = new UpdateDeleteEquipment();
+            updateDeleteEquipment.Show();
+        }
     }
 }

@@ -32,11 +32,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateDeleteEquipment));
-            this.DTP = new Guna.UI.WinForms.GunaDateTimePicker();
             this.labExit = new System.Windows.Forms.Label();
             this.cmbLocation = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbCondition = new System.Windows.Forms.ComboBox();
@@ -54,31 +52,12 @@
             this.btnBack = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnDel = new Bunifu.Framework.UI.BunifuThinButton2();
             this.BtnUpdate = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.txtSearch = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.butRefresh = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnSearch = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.BtnRefresh = new Bunifu.Framework.UI.BunifuThinButton2();
             ((System.ComponentModel.ISupportInitialize)(this.EquipmentGrid)).BeginInit();
             this.SuspendLayout();
-            // 
-            // DTP
-            // 
-            this.DTP.BaseColor = System.Drawing.Color.White;
-            this.DTP.BorderColor = System.Drawing.Color.Silver;
-            this.DTP.CustomFormat = null;
-            this.DTP.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.DTP.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.DTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTP.ForeColor = System.Drawing.Color.Black;
-            this.DTP.Location = new System.Drawing.Point(27, 261);
-            this.DTP.Margin = new System.Windows.Forms.Padding(2);
-            this.DTP.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DTP.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.DTP.Name = "DTP";
-            this.DTP.OnHoverBaseColor = System.Drawing.Color.White;
-            this.DTP.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.DTP.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.DTP.OnPressedColor = System.Drawing.Color.Black;
-            this.DTP.Size = new System.Drawing.Size(219, 37);
-            this.DTP.TabIndex = 62;
-            this.DTP.Text = "Monday, October 16, 2023";
-            this.DTP.Value = new System.DateTime(2023, 10, 16, 10, 8, 10, 72);
             // 
             // labExit
             // 
@@ -86,12 +65,13 @@
             this.labExit.BackColor = System.Drawing.SystemColors.Control;
             this.labExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labExit.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labExit.Location = new System.Drawing.Point(958, 9);
+            this.labExit.Location = new System.Drawing.Point(1161, 9);
             this.labExit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labExit.Name = "labExit";
             this.labExit.Size = new System.Drawing.Size(28, 26);
             this.labExit.TabIndex = 61;
             this.labExit.Text = "X";
+            this.labExit.Click += new System.EventHandler(this.labExit_Click);
             // 
             // cmbLocation
             // 
@@ -101,7 +81,7 @@
             "shelf number 1",
             "shelf number 2",
             "shelf number 3"});
-            this.cmbLocation.Location = new System.Drawing.Point(125, 353);
+            this.cmbLocation.Location = new System.Drawing.Point(125, 282);
             this.cmbLocation.Margin = new System.Windows.Forms.Padding(2);
             this.cmbLocation.Name = "cmbLocation";
             this.cmbLocation.Size = new System.Drawing.Size(157, 25);
@@ -113,25 +93,12 @@
             this.label10.BackColor = System.Drawing.SystemColors.Control;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label10.Location = new System.Drawing.Point(24, 358);
+            this.label10.Location = new System.Drawing.Point(24, 287);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(78, 20);
             this.label10.TabIndex = 59;
             this.label10.Text = "Location";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.Control;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label9.Location = new System.Drawing.Point(24, 239);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(128, 20);
-            this.label9.TabIndex = 58;
-            this.label9.Text = "Purchase Date";
             // 
             // txtName
             // 
@@ -172,7 +139,7 @@
             this.cmbCondition.Items.AddRange(new object[] {
             "New",
             "Old"});
-            this.cmbCondition.Location = new System.Drawing.Point(125, 315);
+            this.cmbCondition.Location = new System.Drawing.Point(125, 244);
             this.cmbCondition.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCondition.Name = "cmbCondition";
             this.cmbCondition.Size = new System.Drawing.Size(157, 25);
@@ -190,7 +157,7 @@
             this.txtQuantity.LineIdleColor = System.Drawing.Color.DodgerBlue;
             this.txtQuantity.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.txtQuantity.LineThickness = 4;
-            this.txtQuantity.Location = new System.Drawing.Point(27, 421);
+            this.txtQuantity.Location = new System.Drawing.Point(27, 350);
             this.txtQuantity.Margin = new System.Windows.Forms.Padding(4);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(222, 44);
@@ -209,7 +176,7 @@
             this.txtPrice.LineIdleColor = System.Drawing.Color.DodgerBlue;
             this.txtPrice.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.txtPrice.LineThickness = 4;
-            this.txtPrice.Location = new System.Drawing.Point(22, 503);
+            this.txtPrice.Location = new System.Drawing.Point(22, 432);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(222, 46);
@@ -222,7 +189,7 @@
             this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label3.Location = new System.Drawing.Point(23, 313);
+            this.label3.Location = new System.Drawing.Point(23, 242);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 20);
@@ -235,7 +202,7 @@
             this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label4.Location = new System.Drawing.Point(23, 397);
+            this.label4.Location = new System.Drawing.Point(23, 326);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 20);
@@ -248,7 +215,7 @@
             this.label5.BackColor = System.Drawing.SystemColors.Control;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label5.Location = new System.Drawing.Point(24, 479);
+            this.label5.Location = new System.Drawing.Point(24, 408);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 20);
@@ -274,7 +241,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label1.Location = new System.Drawing.Point(441, 29);
+            this.label1.Location = new System.Drawing.Point(387, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(206, 26);
@@ -351,7 +318,7 @@
             this.EquipmentGrid.RowHeadersWidth = 51;
             this.EquipmentGrid.RowTemplate.Height = 28;
             this.EquipmentGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.EquipmentGrid.Size = new System.Drawing.Size(679, 526);
+            this.EquipmentGrid.Size = new System.Drawing.Size(882, 461);
             this.EquipmentGrid.TabIndex = 66;
             this.EquipmentGrid.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.EquipmentGrid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -375,6 +342,7 @@
             this.EquipmentGrid.ThemeStyle.RowsStyle.Height = 28;
             this.EquipmentGrid.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.EquipmentGrid.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.EquipmentGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EquipmentGrid_CellDoubleClick);
             // 
             // label8
             // 
@@ -382,7 +350,7 @@
             this.label8.BackColor = System.Drawing.SystemColors.Control;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label8.Location = new System.Drawing.Point(541, 77);
+            this.label8.Location = new System.Drawing.Point(368, 94);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(225, 20);
@@ -407,12 +375,13 @@
             this.btnBack.IdleFillColor = System.Drawing.Color.White;
             this.btnBack.IdleForecolor = System.Drawing.Color.RoyalBlue;
             this.btnBack.IdleLineColor = System.Drawing.Color.RoyalBlue;
-            this.btnBack.Location = new System.Drawing.Point(84, 617);
+            this.btnBack.Location = new System.Drawing.Point(27, 553);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(89, 48);
             this.btnBack.TabIndex = 67;
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnDel
             // 
@@ -432,12 +401,13 @@
             this.btnDel.IdleFillColor = System.Drawing.Color.White;
             this.btnDel.IdleForecolor = System.Drawing.Color.Crimson;
             this.btnDel.IdleLineColor = System.Drawing.Color.Crimson;
-            this.btnDel.Location = new System.Drawing.Point(24, 568);
+            this.btnDel.Location = new System.Drawing.Point(24, 497);
             this.btnDel.Margin = new System.Windows.Forms.Padding(4);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(89, 48);
             this.btnDel.TabIndex = 68;
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // BtnUpdate
             // 
@@ -457,18 +427,120 @@
             this.BtnUpdate.IdleFillColor = System.Drawing.Color.White;
             this.BtnUpdate.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.BtnUpdate.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnUpdate.Location = new System.Drawing.Point(141, 568);
+            this.BtnUpdate.Location = new System.Drawing.Point(141, 497);
             this.BtnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(89, 48);
             this.BtnUpdate.TabIndex = 69;
             this.BtnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSearch.HintForeColor = System.Drawing.Color.Empty;
+            this.txtSearch.HintText = "Equipment\'s value want find";
+            this.txtSearch.isPassword = false;
+            this.txtSearch.LineFocusedColor = System.Drawing.Color.Blue;
+            this.txtSearch.LineIdleColor = System.Drawing.Color.DodgerBlue;
+            this.txtSearch.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.txtSearch.LineThickness = 4;
+            this.txtSearch.Location = new System.Drawing.Point(721, 68);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(238, 46);
+            this.txtSearch.TabIndex = 73;
+            this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // butRefresh
+            // 
+            this.butRefresh.ActiveBorderThickness = 1;
+            this.butRefresh.ActiveCornerRadius = 20;
+            this.butRefresh.ActiveFillColor = System.Drawing.Color.RoyalBlue;
+            this.butRefresh.ActiveForecolor = System.Drawing.Color.White;
+            this.butRefresh.ActiveLineColor = System.Drawing.Color.Snow;
+            this.butRefresh.BackColor = System.Drawing.SystemColors.Control;
+            this.butRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("butRefresh.BackgroundImage")));
+            this.butRefresh.ButtonText = "Refresh";
+            this.butRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butRefresh.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butRefresh.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.butRefresh.IdleBorderThickness = 1;
+            this.butRefresh.IdleCornerRadius = 20;
+            this.butRefresh.IdleFillColor = System.Drawing.Color.White;
+            this.butRefresh.IdleForecolor = System.Drawing.Color.RoyalBlue;
+            this.butRefresh.IdleLineColor = System.Drawing.Color.RoyalBlue;
+            this.butRefresh.Location = new System.Drawing.Point(141, 553);
+            this.butRefresh.Margin = new System.Windows.Forms.Padding(4);
+            this.butRefresh.Name = "butRefresh";
+            this.butRefresh.Size = new System.Drawing.Size(89, 48);
+            this.butRefresh.TabIndex = 74;
+            this.butRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.butRefresh.Click += new System.EventHandler(this.butRefresh_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.ActiveBorderThickness = 1;
+            this.btnSearch.ActiveCornerRadius = 20;
+            this.btnSearch.ActiveFillColor = System.Drawing.Color.DarkOrange;
+            this.btnSearch.ActiveForecolor = System.Drawing.Color.White;
+            this.btnSearch.ActiveLineColor = System.Drawing.Color.Snow;
+            this.btnSearch.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
+            this.btnSearch.ButtonText = "Search";
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnSearch.IdleBorderThickness = 1;
+            this.btnSearch.IdleCornerRadius = 20;
+            this.btnSearch.IdleFillColor = System.Drawing.Color.White;
+            this.btnSearch.IdleForecolor = System.Drawing.Color.DarkOrange;
+            this.btnSearch.IdleLineColor = System.Drawing.Color.DarkOrange;
+            this.btnSearch.Location = new System.Drawing.Point(969, 68);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(89, 48);
+            this.btnSearch.TabIndex = 79;
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // BtnRefresh
+            // 
+            this.BtnRefresh.ActiveBorderThickness = 1;
+            this.BtnRefresh.ActiveCornerRadius = 20;
+            this.BtnRefresh.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.BtnRefresh.ActiveForecolor = System.Drawing.Color.White;
+            this.BtnRefresh.ActiveLineColor = System.Drawing.Color.Snow;
+            this.BtnRefresh.BackColor = System.Drawing.SystemColors.Control;
+            this.BtnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnRefresh.BackgroundImage")));
+            this.BtnRefresh.ButtonText = "Refresh";
+            this.BtnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnRefresh.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRefresh.ForeColor = System.Drawing.Color.SeaGreen;
+            this.BtnRefresh.IdleBorderThickness = 1;
+            this.BtnRefresh.IdleCornerRadius = 20;
+            this.BtnRefresh.IdleFillColor = System.Drawing.Color.White;
+            this.BtnRefresh.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.BtnRefresh.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnRefresh.Location = new System.Drawing.Point(1066, 68);
+            this.BtnRefresh.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnRefresh.Name = "BtnRefresh";
+            this.BtnRefresh.Size = new System.Drawing.Size(89, 48);
+            this.BtnRefresh.TabIndex = 78;
+            this.BtnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // UpdateDeleteEquipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 680);
+            this.ClientSize = new System.Drawing.Size(1200, 624);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.BtnRefresh);
+            this.Controls.Add(this.butRefresh);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.BtnUpdate);
@@ -476,11 +548,9 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.DTP);
             this.Controls.Add(this.labExit);
             this.Controls.Add(this.cmbLocation);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbCondition);
@@ -494,7 +564,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UpdateDeleteEquipment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UpdateDeleteEquipment";
+            this.Load += new System.EventHandler(this.UpdateDeleteEquipment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.EquipmentGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -502,11 +572,9 @@
         }
 
         #endregion
-        private Guna.UI.WinForms.GunaDateTimePicker DTP;
         private System.Windows.Forms.Label labExit;
         private System.Windows.Forms.ComboBox cmbLocation;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbCondition;
@@ -524,5 +592,9 @@
         private Bunifu.Framework.UI.BunifuThinButton2 btnBack;
         private Bunifu.Framework.UI.BunifuThinButton2 btnDel;
         private Bunifu.Framework.UI.BunifuThinButton2 BtnUpdate;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtSearch;
+        private Bunifu.Framework.UI.BunifuThinButton2 butRefresh;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnSearch;
+        private Bunifu.Framework.UI.BunifuThinButton2 BtnRefresh;
     }
 }
