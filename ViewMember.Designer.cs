@@ -28,20 +28,142 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewMember));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnBack = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnSearch = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.BtnRefresh = new Bunifu.Framework.UI.BunifuThinButton2();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearchName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.MemberGrid = new Guna.UI.WinForms.GunaDataGridView();
+            this.btnBack = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnSearch = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.BtnRefresh = new Bunifu.Framework.UI.BunifuThinButton2();
             ((System.ComponentModel.ISupportInitialize)(this.MemberGrid)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.Control;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label7.Location = new System.Drawing.Point(17, 19);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(300, 20);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Group AAA - GYM management tool";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.SystemColors.Control;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label8.Location = new System.Drawing.Point(754, 12);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(28, 26);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "X";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label1.Location = new System.Drawing.Point(464, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(170, 26);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "View members";
+            // 
+            // txtSearchName
+            // 
+            this.txtSearchName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSearchName.HintForeColor = System.Drawing.Color.Empty;
+            this.txtSearchName.HintText = "Search ";
+            this.txtSearchName.isPassword = false;
+            this.txtSearchName.LineFocusedColor = System.Drawing.Color.Blue;
+            this.txtSearchName.LineIdleColor = System.Drawing.Color.DodgerBlue;
+            this.txtSearchName.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.txtSearchName.LineThickness = 4;
+            this.txtSearchName.Location = new System.Drawing.Point(227, 58);
+            this.txtSearchName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearchName.Name = "txtSearchName";
+            this.txtSearchName.Size = new System.Drawing.Size(206, 46);
+            this.txtSearchName.TabIndex = 22;
+            this.txtSearchName.Tag = "";
+            this.txtSearchName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // MemberGrid
+            // 
+            this.MemberGrid.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.MemberGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.MemberGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.MemberGrid.BackgroundColor = System.Drawing.Color.White;
+            this.MemberGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.MemberGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.MemberGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MemberGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.MemberGrid.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MemberGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            this.MemberGrid.EnableHeadersVisualStyles = false;
+            this.MemberGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.MemberGrid.Location = new System.Drawing.Point(9, 125);
+            this.MemberGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MemberGrid.Name = "MemberGrid";
+            this.MemberGrid.ReadOnly = true;
+            this.MemberGrid.RowHeadersVisible = false;
+            this.MemberGrid.RowHeadersWidth = 51;
+            this.MemberGrid.RowTemplate.Height = 28;
+            this.MemberGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.MemberGrid.Size = new System.Drawing.Size(772, 370);
+            this.MemberGrid.TabIndex = 23;
+            this.MemberGrid.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+            this.MemberGrid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.MemberGrid.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.MemberGrid.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.MemberGrid.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.MemberGrid.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.MemberGrid.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.MemberGrid.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.MemberGrid.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.MemberGrid.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.MemberGrid.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MemberGrid.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.MemberGrid.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.MemberGrid.ThemeStyle.HeaderStyle.Height = 30;
+            this.MemberGrid.ThemeStyle.ReadOnly = true;
+            this.MemberGrid.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.MemberGrid.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.MemberGrid.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MemberGrid.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.MemberGrid.ThemeStyle.RowsStyle.Height = 28;
+            this.MemberGrid.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.MemberGrid.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // btnBack
             // 
@@ -61,10 +183,10 @@
             this.btnBack.IdleFillColor = System.Drawing.Color.White;
             this.btnBack.IdleForecolor = System.Drawing.Color.RoyalBlue;
             this.btnBack.IdleLineColor = System.Drawing.Color.RoyalBlue;
-            this.btnBack.Location = new System.Drawing.Point(28, 71);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(5);
+            this.btnBack.Location = new System.Drawing.Point(21, 58);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(119, 59);
+            this.btnBack.Size = new System.Drawing.Size(89, 48);
             this.btnBack.TabIndex = 21;
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -87,10 +209,10 @@
             this.btnSearch.IdleFillColor = System.Drawing.Color.White;
             this.btnSearch.IdleForecolor = System.Drawing.Color.DarkOrange;
             this.btnSearch.IdleLineColor = System.Drawing.Color.DarkOrange;
-            this.btnSearch.Location = new System.Drawing.Point(587, 71);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(5);
+            this.btnSearch.Location = new System.Drawing.Point(440, 58);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(119, 59);
+            this.btnSearch.Size = new System.Drawing.Size(89, 48);
             this.btnSearch.TabIndex = 20;
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -113,137 +235,19 @@
             this.BtnRefresh.IdleFillColor = System.Drawing.Color.White;
             this.BtnRefresh.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.BtnRefresh.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnRefresh.Location = new System.Drawing.Point(737, 71);
-            this.BtnRefresh.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnRefresh.Location = new System.Drawing.Point(553, 58);
+            this.BtnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.BtnRefresh.Name = "BtnRefresh";
-            this.BtnRefresh.Size = new System.Drawing.Size(119, 59);
+            this.BtnRefresh.Size = new System.Drawing.Size(89, 48);
             this.BtnRefresh.TabIndex = 19;
             this.BtnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.Control;
-            this.label7.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label7.Location = new System.Drawing.Point(23, 23);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(381, 27);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Group AAA - GYM management tool";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.Control;
-            this.label8.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label8.Location = new System.Drawing.Point(1005, 15);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 39);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "X";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label1.Location = new System.Drawing.Point(618, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(238, 39);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "View members";
-            // 
-            // txtSearchName
-            // 
-            this.txtSearchName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearchName.Font = new System.Drawing.Font("Montserrat Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSearchName.HintForeColor = System.Drawing.Color.Empty;
-            this.txtSearchName.HintText = "Search ";
-            this.txtSearchName.isPassword = false;
-            this.txtSearchName.LineFocusedColor = System.Drawing.Color.Blue;
-            this.txtSearchName.LineIdleColor = System.Drawing.Color.DodgerBlue;
-            this.txtSearchName.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.txtSearchName.LineThickness = 4;
-            this.txtSearchName.Location = new System.Drawing.Point(303, 71);
-            this.txtSearchName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.txtSearchName.Name = "txtSearchName";
-            this.txtSearchName.Size = new System.Drawing.Size(274, 56);
-            this.txtSearchName.TabIndex = 22;
-            this.txtSearchName.Tag = "";
-            this.txtSearchName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // MemberGrid
-            // 
-            this.MemberGrid.AllowUserToAddRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.MemberGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.MemberGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.MemberGrid.BackgroundColor = System.Drawing.Color.White;
-            this.MemberGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.MemberGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.MemberGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MemberGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.MemberGrid.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.MemberGrid.DefaultCellStyle = dataGridViewCellStyle6;
-            this.MemberGrid.EnableHeadersVisualStyles = false;
-            this.MemberGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.MemberGrid.Location = new System.Drawing.Point(12, 154);
-            this.MemberGrid.Name = "MemberGrid";
-            this.MemberGrid.ReadOnly = true;
-            this.MemberGrid.RowHeadersVisible = false;
-            this.MemberGrid.RowHeadersWidth = 51;
-            this.MemberGrid.RowTemplate.Height = 28;
-            this.MemberGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MemberGrid.Size = new System.Drawing.Size(1030, 455);
-            this.MemberGrid.TabIndex = 23;
-            this.MemberGrid.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
-            this.MemberGrid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.MemberGrid.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.MemberGrid.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.MemberGrid.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.MemberGrid.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.MemberGrid.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.MemberGrid.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.MemberGrid.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.MemberGrid.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.MemberGrid.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MemberGrid.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.MemberGrid.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.MemberGrid.ThemeStyle.HeaderStyle.Height = 30;
-            this.MemberGrid.ThemeStyle.ReadOnly = true;
-            this.MemberGrid.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.MemberGrid.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.MemberGrid.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MemberGrid.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.MemberGrid.ThemeStyle.RowsStyle.Height = 28;
-            this.MemberGrid.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.MemberGrid.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
             // ViewMember
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1054, 638);
+            this.ClientSize = new System.Drawing.Size(790, 518);
             this.Controls.Add(this.MemberGrid);
             this.Controls.Add(this.txtSearchName);
             this.Controls.Add(this.btnBack);
@@ -253,10 +257,12 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ViewMember";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewMember";
             this.Load += new System.EventHandler(this.ViewMember_Load);
+            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.ViewMember_PreviewKeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.MemberGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

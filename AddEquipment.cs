@@ -45,9 +45,23 @@ namespace Gym_management
 
         private void labExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", System.Windows.Forms.MessageBoxButtons.YesNo);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
-
+        private void AddEquipment_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Alt && e.KeyCode == Keys.F4)
+            {
+                System.Windows.Forms.DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", System.Windows.Forms.MessageBoxButtons.YesNo);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+            }
+        }
         private void btnReset_Click(object sender, EventArgs e)
         {
             Blank_TextBox();
@@ -56,9 +70,13 @@ namespace Gym_management
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            FormMain formMain = new FormMain();
-            formMain.Show();
-            Hide();
+            DialogResult result = MessageBox.Show("Bạn có muốn ẩn Form hiện tại và quay lại Form Main?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                FormMain formMain = new FormMain();
+                formMain.Show();
+            }
         }
         
         private void BtnUpdate_Click(object sender, EventArgs e)
@@ -88,7 +106,7 @@ namespace Gym_management
                     {
                         throw new Exception("Số lượng phải là số.");
                     }
-                    if (Quantity < 0 || Quantity > 9999999999)
+                    if (Quantity < 0 || Quantity > 2147483647)
                     {
                         throw new Exception("Số lượng không thể lớn hơn 2.147.483.647 và không thể âm");
                     }
@@ -125,5 +143,12 @@ namespace Gym_management
                 }
             }
         }
+
+        private void AddEquipment_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
+
+        
     }
 }

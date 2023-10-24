@@ -28,18 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Update_DEL));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Update_DEL));
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPhone = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnBack = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnDel = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.BtnUpdate = new Bunifu.Framework.UI.BunifuThinButton2();
             this.MemberGrid = new Guna.UI.WinForms.GunaDataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,6 +45,9 @@
             this.txtAge = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnBack = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnDel = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.BtnUpdate = new Bunifu.Framework.UI.BunifuThinButton2();
             ((System.ComponentModel.ISupportInitialize)(this.MemberGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,84 +122,6 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "X";
             this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.ActiveBorderThickness = 1;
-            this.btnBack.ActiveCornerRadius = 20;
-            this.btnBack.ActiveFillColor = System.Drawing.Color.RoyalBlue;
-            this.btnBack.ActiveForecolor = System.Drawing.Color.White;
-            this.btnBack.ActiveLineColor = System.Drawing.Color.Snow;
-            this.btnBack.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
-            this.btnBack.ButtonText = "Back";
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btnBack.IdleBorderThickness = 1;
-            this.btnBack.IdleCornerRadius = 20;
-            this.btnBack.IdleFillColor = System.Drawing.Color.White;
-            this.btnBack.IdleForecolor = System.Drawing.Color.RoyalBlue;
-            this.btnBack.IdleLineColor = System.Drawing.Color.RoyalBlue;
-            this.btnBack.Location = new System.Drawing.Point(83, 459);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(89, 48);
-            this.btnBack.TabIndex = 4;
-            this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // btnDel
-            // 
-            this.btnDel.ActiveBorderThickness = 1;
-            this.btnDel.ActiveCornerRadius = 20;
-            this.btnDel.ActiveFillColor = System.Drawing.Color.Crimson;
-            this.btnDel.ActiveForecolor = System.Drawing.Color.White;
-            this.btnDel.ActiveLineColor = System.Drawing.Color.Snow;
-            this.btnDel.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
-            this.btnDel.ButtonText = "Delete";
-            this.btnDel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDel.ForeColor = System.Drawing.Color.Crimson;
-            this.btnDel.IdleBorderThickness = 1;
-            this.btnDel.IdleCornerRadius = 20;
-            this.btnDel.IdleFillColor = System.Drawing.Color.White;
-            this.btnDel.IdleForecolor = System.Drawing.Color.Crimson;
-            this.btnDel.IdleLineColor = System.Drawing.Color.Crimson;
-            this.btnDel.Location = new System.Drawing.Point(23, 410);
-            this.btnDel.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(89, 48);
-            this.btnDel.TabIndex = 4;
-            this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
-            // 
-            // BtnUpdate
-            // 
-            this.BtnUpdate.ActiveBorderThickness = 1;
-            this.BtnUpdate.ActiveCornerRadius = 20;
-            this.BtnUpdate.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.BtnUpdate.ActiveForecolor = System.Drawing.Color.White;
-            this.BtnUpdate.ActiveLineColor = System.Drawing.Color.Snow;
-            this.BtnUpdate.BackColor = System.Drawing.SystemColors.Control;
-            this.BtnUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnUpdate.BackgroundImage")));
-            this.BtnUpdate.ButtonText = "Update";
-            this.BtnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnUpdate.ForeColor = System.Drawing.Color.SeaGreen;
-            this.BtnUpdate.IdleBorderThickness = 1;
-            this.BtnUpdate.IdleCornerRadius = 20;
-            this.BtnUpdate.IdleFillColor = System.Drawing.Color.White;
-            this.BtnUpdate.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.BtnUpdate.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnUpdate.Location = new System.Drawing.Point(140, 410);
-            this.BtnUpdate.Margin = new System.Windows.Forms.Padding(4);
-            this.BtnUpdate.Name = "BtnUpdate";
-            this.BtnUpdate.Size = new System.Drawing.Size(89, 48);
-            this.BtnUpdate.TabIndex = 4;
-            this.BtnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // MemberGrid
             // 
@@ -367,6 +289,84 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Select member to delete";
             // 
+            // btnBack
+            // 
+            this.btnBack.ActiveBorderThickness = 1;
+            this.btnBack.ActiveCornerRadius = 20;
+            this.btnBack.ActiveFillColor = System.Drawing.Color.RoyalBlue;
+            this.btnBack.ActiveForecolor = System.Drawing.Color.White;
+            this.btnBack.ActiveLineColor = System.Drawing.Color.Snow;
+            this.btnBack.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
+            this.btnBack.ButtonText = "Back";
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnBack.IdleBorderThickness = 1;
+            this.btnBack.IdleCornerRadius = 20;
+            this.btnBack.IdleFillColor = System.Drawing.Color.White;
+            this.btnBack.IdleForecolor = System.Drawing.Color.RoyalBlue;
+            this.btnBack.IdleLineColor = System.Drawing.Color.RoyalBlue;
+            this.btnBack.Location = new System.Drawing.Point(83, 459);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(89, 48);
+            this.btnBack.TabIndex = 4;
+            this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.ActiveBorderThickness = 1;
+            this.btnDel.ActiveCornerRadius = 20;
+            this.btnDel.ActiveFillColor = System.Drawing.Color.Crimson;
+            this.btnDel.ActiveForecolor = System.Drawing.Color.White;
+            this.btnDel.ActiveLineColor = System.Drawing.Color.Snow;
+            this.btnDel.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
+            this.btnDel.ButtonText = "Delete";
+            this.btnDel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDel.ForeColor = System.Drawing.Color.Crimson;
+            this.btnDel.IdleBorderThickness = 1;
+            this.btnDel.IdleCornerRadius = 20;
+            this.btnDel.IdleFillColor = System.Drawing.Color.White;
+            this.btnDel.IdleForecolor = System.Drawing.Color.Crimson;
+            this.btnDel.IdleLineColor = System.Drawing.Color.Crimson;
+            this.btnDel.Location = new System.Drawing.Point(23, 410);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(89, 48);
+            this.btnDel.TabIndex = 4;
+            this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // BtnUpdate
+            // 
+            this.BtnUpdate.ActiveBorderThickness = 1;
+            this.BtnUpdate.ActiveCornerRadius = 20;
+            this.BtnUpdate.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.BtnUpdate.ActiveForecolor = System.Drawing.Color.White;
+            this.BtnUpdate.ActiveLineColor = System.Drawing.Color.Snow;
+            this.BtnUpdate.BackColor = System.Drawing.SystemColors.Control;
+            this.BtnUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnUpdate.BackgroundImage")));
+            this.BtnUpdate.ButtonText = "Update";
+            this.BtnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUpdate.ForeColor = System.Drawing.Color.SeaGreen;
+            this.BtnUpdate.IdleBorderThickness = 1;
+            this.BtnUpdate.IdleCornerRadius = 20;
+            this.BtnUpdate.IdleFillColor = System.Drawing.Color.White;
+            this.BtnUpdate.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.BtnUpdate.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnUpdate.Location = new System.Drawing.Point(140, 410);
+            this.BtnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnUpdate.Name = "BtnUpdate";
+            this.BtnUpdate.Size = new System.Drawing.Size(89, 48);
+            this.BtnUpdate.TabIndex = 4;
+            this.BtnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
+            // 
             // Update_DEL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -394,6 +394,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update_DEL";
             this.Load += new System.EventHandler(this.Update_DEL_Load);
+            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.Update_DEL_PreviewKeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.MemberGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

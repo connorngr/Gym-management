@@ -16,7 +16,7 @@ namespace Gym_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UpdateDeleteEquipment());
+            Application.Run(new Login_DB());
         }
     }
 }

@@ -54,21 +54,34 @@ namespace Gym_management
             DTP.CustomFormat = "dd-MM-yyyy";
             populate();
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
         private void btnBack_Click(object sender, EventArgs e)
         {
-            FormMain fm = new FormMain();
-            fm.Show();
-            this.Hide();
+            DialogResult result = MessageBox.Show("Bạn có muốn ẩn Form hiện tại và quay lại Form Main?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                FormMain formMain = new FormMain();
+                formMain.Show();
+            }
         }
-
         private void label10_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", System.Windows.Forms.MessageBoxButtons.YesNo);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+        private void Payment_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Alt && e.KeyCode == Keys.F4)
+            {
+                System.Windows.Forms.DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", System.Windows.Forms.MessageBoxButtons.YesNo);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+            }
         }
 
         private void BtnPay_Click(object sender, EventArgs e)
@@ -123,15 +136,12 @@ namespace Gym_management
                             cmd.ExecuteNonQuery();
                             MessageBox.Show("Số tiền thanh toán thành công.");
                         }
-                        catch (Exception ex)
+                        catch (Exception)
                         {
                             MessageBox.Show("ID Not Found", "Warning");
                         }
 
-                    }
-                    //SqlCommand can be used for any purpose you have in mind
-                    //related to Create / Read / Update / Delete
-                                                         
+                    }                                    
                 }
                 conn.Close();
                 populate();
@@ -143,7 +153,7 @@ namespace Gym_management
             }
         }
 
-
+        
     }
 }
 

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateDeleteEquipment));
             this.labExit = new System.Windows.Forms.Label();
             this.cmbLocation = new System.Windows.Forms.ComboBox();
@@ -49,13 +49,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.EquipmentGrid = new Guna.UI.WinForms.GunaDataGridView();
             this.label8 = new System.Windows.Forms.Label();
+            this.txtSearch = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.btnSearch = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.BtnRefresh = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.butRefresh = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnBack = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnDel = new Bunifu.Framework.UI.BunifuThinButton2();
             this.BtnUpdate = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.txtSearch = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.butRefresh = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnSearch = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.BtnRefresh = new Bunifu.Framework.UI.BunifuThinButton2();
             ((System.ComponentModel.ISupportInitialize)(this.EquipmentGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -284,30 +284,30 @@
             // EquipmentGrid
             // 
             this.EquipmentGrid.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.EquipmentGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.EquipmentGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.EquipmentGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.EquipmentGrid.BackgroundColor = System.Drawing.Color.White;
             this.EquipmentGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EquipmentGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.EquipmentGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EquipmentGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EquipmentGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.EquipmentGrid.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EquipmentGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EquipmentGrid.DefaultCellStyle = dataGridViewCellStyle6;
             this.EquipmentGrid.EnableHeadersVisualStyles = false;
             this.EquipmentGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.EquipmentGrid.Location = new System.Drawing.Point(307, 122);
@@ -356,6 +356,103 @@
             this.label8.Size = new System.Drawing.Size(225, 20);
             this.label8.TabIndex = 65;
             this.label8.Text = "Select equipment to delete";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSearch.HintForeColor = System.Drawing.Color.Empty;
+            this.txtSearch.HintText = "Equipment\'s value want find";
+            this.txtSearch.isPassword = false;
+            this.txtSearch.LineFocusedColor = System.Drawing.Color.Blue;
+            this.txtSearch.LineIdleColor = System.Drawing.Color.DodgerBlue;
+            this.txtSearch.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.txtSearch.LineThickness = 4;
+            this.txtSearch.Location = new System.Drawing.Point(721, 68);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(238, 46);
+            this.txtSearch.TabIndex = 73;
+            this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.ActiveBorderThickness = 1;
+            this.btnSearch.ActiveCornerRadius = 20;
+            this.btnSearch.ActiveFillColor = System.Drawing.Color.DarkOrange;
+            this.btnSearch.ActiveForecolor = System.Drawing.Color.White;
+            this.btnSearch.ActiveLineColor = System.Drawing.Color.Snow;
+            this.btnSearch.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
+            this.btnSearch.ButtonText = "Search";
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnSearch.IdleBorderThickness = 1;
+            this.btnSearch.IdleCornerRadius = 20;
+            this.btnSearch.IdleFillColor = System.Drawing.Color.White;
+            this.btnSearch.IdleForecolor = System.Drawing.Color.DarkOrange;
+            this.btnSearch.IdleLineColor = System.Drawing.Color.DarkOrange;
+            this.btnSearch.Location = new System.Drawing.Point(969, 68);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(89, 48);
+            this.btnSearch.TabIndex = 79;
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // BtnRefresh
+            // 
+            this.BtnRefresh.ActiveBorderThickness = 1;
+            this.BtnRefresh.ActiveCornerRadius = 20;
+            this.BtnRefresh.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.BtnRefresh.ActiveForecolor = System.Drawing.Color.White;
+            this.BtnRefresh.ActiveLineColor = System.Drawing.Color.Snow;
+            this.BtnRefresh.BackColor = System.Drawing.SystemColors.Control;
+            this.BtnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnRefresh.BackgroundImage")));
+            this.BtnRefresh.ButtonText = "Refresh";
+            this.BtnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnRefresh.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRefresh.ForeColor = System.Drawing.Color.SeaGreen;
+            this.BtnRefresh.IdleBorderThickness = 1;
+            this.BtnRefresh.IdleCornerRadius = 20;
+            this.BtnRefresh.IdleFillColor = System.Drawing.Color.White;
+            this.BtnRefresh.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.BtnRefresh.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnRefresh.Location = new System.Drawing.Point(1066, 68);
+            this.BtnRefresh.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnRefresh.Name = "BtnRefresh";
+            this.BtnRefresh.Size = new System.Drawing.Size(89, 48);
+            this.BtnRefresh.TabIndex = 78;
+            this.BtnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
+            // 
+            // butRefresh
+            // 
+            this.butRefresh.ActiveBorderThickness = 1;
+            this.butRefresh.ActiveCornerRadius = 20;
+            this.butRefresh.ActiveFillColor = System.Drawing.Color.RoyalBlue;
+            this.butRefresh.ActiveForecolor = System.Drawing.Color.White;
+            this.butRefresh.ActiveLineColor = System.Drawing.Color.Snow;
+            this.butRefresh.BackColor = System.Drawing.SystemColors.Control;
+            this.butRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("butRefresh.BackgroundImage")));
+            this.butRefresh.ButtonText = "Refresh";
+            this.butRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butRefresh.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butRefresh.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.butRefresh.IdleBorderThickness = 1;
+            this.butRefresh.IdleCornerRadius = 20;
+            this.butRefresh.IdleFillColor = System.Drawing.Color.White;
+            this.butRefresh.IdleForecolor = System.Drawing.Color.RoyalBlue;
+            this.butRefresh.IdleLineColor = System.Drawing.Color.RoyalBlue;
+            this.butRefresh.Location = new System.Drawing.Point(141, 553);
+            this.butRefresh.Margin = new System.Windows.Forms.Padding(4);
+            this.butRefresh.Name = "butRefresh";
+            this.butRefresh.Size = new System.Drawing.Size(89, 48);
+            this.butRefresh.TabIndex = 74;
+            this.butRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.butRefresh.Click += new System.EventHandler(this.butRefresh_Click);
             // 
             // btnBack
             // 
@@ -435,103 +532,6 @@
             this.BtnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
-            // txtSearch
-            // 
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSearch.HintForeColor = System.Drawing.Color.Empty;
-            this.txtSearch.HintText = "Equipment\'s value want find";
-            this.txtSearch.isPassword = false;
-            this.txtSearch.LineFocusedColor = System.Drawing.Color.Blue;
-            this.txtSearch.LineIdleColor = System.Drawing.Color.DodgerBlue;
-            this.txtSearch.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.txtSearch.LineThickness = 4;
-            this.txtSearch.Location = new System.Drawing.Point(721, 68);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(238, 46);
-            this.txtSearch.TabIndex = 73;
-            this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // butRefresh
-            // 
-            this.butRefresh.ActiveBorderThickness = 1;
-            this.butRefresh.ActiveCornerRadius = 20;
-            this.butRefresh.ActiveFillColor = System.Drawing.Color.RoyalBlue;
-            this.butRefresh.ActiveForecolor = System.Drawing.Color.White;
-            this.butRefresh.ActiveLineColor = System.Drawing.Color.Snow;
-            this.butRefresh.BackColor = System.Drawing.SystemColors.Control;
-            this.butRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("butRefresh.BackgroundImage")));
-            this.butRefresh.ButtonText = "Refresh";
-            this.butRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.butRefresh.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butRefresh.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.butRefresh.IdleBorderThickness = 1;
-            this.butRefresh.IdleCornerRadius = 20;
-            this.butRefresh.IdleFillColor = System.Drawing.Color.White;
-            this.butRefresh.IdleForecolor = System.Drawing.Color.RoyalBlue;
-            this.butRefresh.IdleLineColor = System.Drawing.Color.RoyalBlue;
-            this.butRefresh.Location = new System.Drawing.Point(141, 553);
-            this.butRefresh.Margin = new System.Windows.Forms.Padding(4);
-            this.butRefresh.Name = "butRefresh";
-            this.butRefresh.Size = new System.Drawing.Size(89, 48);
-            this.butRefresh.TabIndex = 74;
-            this.butRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.butRefresh.Click += new System.EventHandler(this.butRefresh_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.ActiveBorderThickness = 1;
-            this.btnSearch.ActiveCornerRadius = 20;
-            this.btnSearch.ActiveFillColor = System.Drawing.Color.DarkOrange;
-            this.btnSearch.ActiveForecolor = System.Drawing.Color.White;
-            this.btnSearch.ActiveLineColor = System.Drawing.Color.Snow;
-            this.btnSearch.BackColor = System.Drawing.SystemColors.Control;
-            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
-            this.btnSearch.ButtonText = "Search";
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnSearch.IdleBorderThickness = 1;
-            this.btnSearch.IdleCornerRadius = 20;
-            this.btnSearch.IdleFillColor = System.Drawing.Color.White;
-            this.btnSearch.IdleForecolor = System.Drawing.Color.DarkOrange;
-            this.btnSearch.IdleLineColor = System.Drawing.Color.DarkOrange;
-            this.btnSearch.Location = new System.Drawing.Point(969, 68);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(89, 48);
-            this.btnSearch.TabIndex = 79;
-            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // BtnRefresh
-            // 
-            this.BtnRefresh.ActiveBorderThickness = 1;
-            this.BtnRefresh.ActiveCornerRadius = 20;
-            this.BtnRefresh.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.BtnRefresh.ActiveForecolor = System.Drawing.Color.White;
-            this.BtnRefresh.ActiveLineColor = System.Drawing.Color.Snow;
-            this.BtnRefresh.BackColor = System.Drawing.SystemColors.Control;
-            this.BtnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnRefresh.BackgroundImage")));
-            this.BtnRefresh.ButtonText = "Refresh";
-            this.BtnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnRefresh.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRefresh.ForeColor = System.Drawing.Color.SeaGreen;
-            this.BtnRefresh.IdleBorderThickness = 1;
-            this.BtnRefresh.IdleCornerRadius = 20;
-            this.BtnRefresh.IdleFillColor = System.Drawing.Color.White;
-            this.BtnRefresh.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.BtnRefresh.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnRefresh.Location = new System.Drawing.Point(1066, 68);
-            this.BtnRefresh.Margin = new System.Windows.Forms.Padding(4);
-            this.BtnRefresh.Name = "BtnRefresh";
-            this.BtnRefresh.Size = new System.Drawing.Size(89, 48);
-            this.BtnRefresh.TabIndex = 78;
-            this.BtnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
-            // 
             // UpdateDeleteEquipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -565,6 +565,7 @@
             this.Name = "UpdateDeleteEquipment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.UpdateDeleteEquipment_Load);
+            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.UpdateDeleteEquipment_PreviewKeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.EquipmentGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

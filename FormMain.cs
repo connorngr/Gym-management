@@ -18,33 +18,37 @@ namespace Gym_management
         {
             InitializeComponent();          
         }
-
-
-
         private void label3_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", System.Windows.Forms.MessageBoxButtons.YesNo);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
-
-
-
-
+        private void FormMain_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Alt && e.KeyCode == Keys.F4)
+            {
+                System.Windows.Forms.DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", System.Windows.Forms.MessageBoxButtons.YesNo);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+            }
+        }
         private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
             Update_DEL update_DEL   = new Update_DEL();
             update_DEL.Show();
             Hide();
         }
-
-
-
         private void btnAddMem_Click(object sender, EventArgs e)
         {
             AddMember addMember = new AddMember();
             addMember.Show();
             Hide();
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ViewMember viewMember = new ViewMember();
@@ -72,5 +76,7 @@ namespace Gym_management
             UpdateDeleteEquipment updateDeleteEquipment = new UpdateDeleteEquipment();
             updateDeleteEquipment.Show();
         }
+
+        
     }
 }

@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEquipment));
-            this.btnReset = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnBack = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.BtnUpdate = new Bunifu.Framework.UI.BunifuThinButton2();
             this.cmbCondition = new System.Windows.Forms.ComboBox();
             this.txtQuantity = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtPrice = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -49,85 +46,10 @@
             this.DTP = new Guna.UI.WinForms.GunaDateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.txtManufacturer = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.btnReset = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnBack = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.BtnUpdate = new Bunifu.Framework.UI.BunifuThinButton2();
             this.SuspendLayout();
-            // 
-            // btnReset
-            // 
-            this.btnReset.ActiveBorderThickness = 1;
-            this.btnReset.ActiveCornerRadius = 20;
-            this.btnReset.ActiveFillColor = System.Drawing.Color.Crimson;
-            this.btnReset.ActiveForecolor = System.Drawing.Color.White;
-            this.btnReset.ActiveLineColor = System.Drawing.Color.Snow;
-            this.btnReset.BackColor = System.Drawing.SystemColors.Control;
-            this.btnReset.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReset.BackgroundImage")));
-            this.btnReset.ButtonText = "Reset";
-            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReset.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.ForeColor = System.Drawing.Color.Crimson;
-            this.btnReset.IdleBorderThickness = 1;
-            this.btnReset.IdleCornerRadius = 20;
-            this.btnReset.IdleFillColor = System.Drawing.Color.White;
-            this.btnReset.IdleForecolor = System.Drawing.Color.Crimson;
-            this.btnReset.IdleLineColor = System.Drawing.Color.Crimson;
-            this.btnReset.Location = new System.Drawing.Point(432, 420);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(89, 48);
-            this.btnReset.TabIndex = 35;
-            this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.ActiveBorderThickness = 1;
-            this.btnBack.ActiveCornerRadius = 20;
-            this.btnBack.ActiveFillColor = System.Drawing.Color.RoyalBlue;
-            this.btnBack.ActiveForecolor = System.Drawing.Color.White;
-            this.btnBack.ActiveLineColor = System.Drawing.Color.Snow;
-            this.btnBack.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
-            this.btnBack.ButtonText = "Back";
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btnBack.IdleBorderThickness = 1;
-            this.btnBack.IdleCornerRadius = 20;
-            this.btnBack.IdleFillColor = System.Drawing.Color.White;
-            this.btnBack.IdleForecolor = System.Drawing.Color.RoyalBlue;
-            this.btnBack.IdleLineColor = System.Drawing.Color.RoyalBlue;
-            this.btnBack.Location = new System.Drawing.Point(70, 420);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(89, 48);
-            this.btnBack.TabIndex = 34;
-            this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // BtnUpdate
-            // 
-            this.BtnUpdate.ActiveBorderThickness = 1;
-            this.BtnUpdate.ActiveCornerRadius = 20;
-            this.BtnUpdate.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.BtnUpdate.ActiveForecolor = System.Drawing.Color.White;
-            this.BtnUpdate.ActiveLineColor = System.Drawing.Color.Snow;
-            this.BtnUpdate.BackColor = System.Drawing.SystemColors.Control;
-            this.BtnUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnUpdate.BackgroundImage")));
-            this.BtnUpdate.ButtonText = "Add";
-            this.BtnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnUpdate.ForeColor = System.Drawing.Color.SeaGreen;
-            this.BtnUpdate.IdleBorderThickness = 1;
-            this.BtnUpdate.IdleCornerRadius = 20;
-            this.BtnUpdate.IdleFillColor = System.Drawing.Color.White;
-            this.BtnUpdate.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.BtnUpdate.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnUpdate.Location = new System.Drawing.Point(564, 420);
-            this.BtnUpdate.Margin = new System.Windows.Forms.Padding(4);
-            this.BtnUpdate.Name = "BtnUpdate";
-            this.BtnUpdate.Size = new System.Drawing.Size(89, 48);
-            this.BtnUpdate.TabIndex = 33;
-            this.BtnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // cmbCondition
             // 
@@ -386,6 +308,84 @@
             this.txtManufacturer.TabIndex = 47;
             this.txtManufacturer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
+            // btnReset
+            // 
+            this.btnReset.ActiveBorderThickness = 1;
+            this.btnReset.ActiveCornerRadius = 20;
+            this.btnReset.ActiveFillColor = System.Drawing.Color.Crimson;
+            this.btnReset.ActiveForecolor = System.Drawing.Color.White;
+            this.btnReset.ActiveLineColor = System.Drawing.Color.Snow;
+            this.btnReset.BackColor = System.Drawing.SystemColors.Control;
+            this.btnReset.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReset.BackgroundImage")));
+            this.btnReset.ButtonText = "Reset";
+            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReset.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.Crimson;
+            this.btnReset.IdleBorderThickness = 1;
+            this.btnReset.IdleCornerRadius = 20;
+            this.btnReset.IdleFillColor = System.Drawing.Color.White;
+            this.btnReset.IdleForecolor = System.Drawing.Color.Crimson;
+            this.btnReset.IdleLineColor = System.Drawing.Color.Crimson;
+            this.btnReset.Location = new System.Drawing.Point(432, 420);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(89, 48);
+            this.btnReset.TabIndex = 35;
+            this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.ActiveBorderThickness = 1;
+            this.btnBack.ActiveCornerRadius = 20;
+            this.btnBack.ActiveFillColor = System.Drawing.Color.RoyalBlue;
+            this.btnBack.ActiveForecolor = System.Drawing.Color.White;
+            this.btnBack.ActiveLineColor = System.Drawing.Color.Snow;
+            this.btnBack.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
+            this.btnBack.ButtonText = "Back";
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnBack.IdleBorderThickness = 1;
+            this.btnBack.IdleCornerRadius = 20;
+            this.btnBack.IdleFillColor = System.Drawing.Color.White;
+            this.btnBack.IdleForecolor = System.Drawing.Color.RoyalBlue;
+            this.btnBack.IdleLineColor = System.Drawing.Color.RoyalBlue;
+            this.btnBack.Location = new System.Drawing.Point(70, 420);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(89, 48);
+            this.btnBack.TabIndex = 34;
+            this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // BtnUpdate
+            // 
+            this.BtnUpdate.ActiveBorderThickness = 1;
+            this.BtnUpdate.ActiveCornerRadius = 20;
+            this.BtnUpdate.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.BtnUpdate.ActiveForecolor = System.Drawing.Color.White;
+            this.BtnUpdate.ActiveLineColor = System.Drawing.Color.Snow;
+            this.BtnUpdate.BackColor = System.Drawing.SystemColors.Control;
+            this.BtnUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnUpdate.BackgroundImage")));
+            this.BtnUpdate.ButtonText = "Add";
+            this.BtnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUpdate.ForeColor = System.Drawing.Color.SeaGreen;
+            this.BtnUpdate.IdleBorderThickness = 1;
+            this.BtnUpdate.IdleCornerRadius = 20;
+            this.BtnUpdate.IdleFillColor = System.Drawing.Color.White;
+            this.BtnUpdate.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.BtnUpdate.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.BtnUpdate.Location = new System.Drawing.Point(564, 420);
+            this.BtnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnUpdate.Name = "BtnUpdate";
+            this.BtnUpdate.Size = new System.Drawing.Size(89, 48);
+            this.BtnUpdate.TabIndex = 33;
+            this.BtnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
+            // 
             // AddEquipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,7 +415,9 @@
             this.Name = "AddEquipment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Equipment";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddEquipment_FormClosing);
             this.Load += new System.EventHandler(this.Equipment_Load);
+            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.AddEquipment_PreviewKeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
