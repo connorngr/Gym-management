@@ -63,7 +63,7 @@
             this.txtPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPhone.HintForeColor = System.Drawing.Color.Empty;
+            this.txtPhone.HintForeColor = System.Drawing.Color.DarkSlateGray;
             this.txtPhone.HintText = "Nhập số điện thoại";
             this.txtPhone.isPassword = false;
             this.txtPhone.LineFocusedColor = System.Drawing.Color.Blue;
@@ -82,7 +82,7 @@
             this.txtAge.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtAge.HintForeColor = System.Drawing.Color.Empty;
+            this.txtAge.HintForeColor = System.Drawing.Color.DarkSlateGray;
             this.txtAge.HintText = "Nhập tuổi";
             this.txtAge.isPassword = false;
             this.txtAge.LineFocusedColor = System.Drawing.Color.Blue;
@@ -101,7 +101,7 @@
             this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtName.HintForeColor = System.Drawing.Color.Empty;
+            this.txtName.HintForeColor = System.Drawing.Color.DarkSlateGray;
             this.txtName.HintText = "Nhập tên";
             this.txtName.isPassword = false;
             this.txtName.LineFocusedColor = System.Drawing.Color.Blue;
@@ -198,12 +198,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.label1.Location = new System.Drawing.Point(434, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 26);
+            this.label1.Size = new System.Drawing.Size(205, 29);
             this.label1.TabIndex = 5;
             this.label1.Text = "Thêm thành viên";
             // 

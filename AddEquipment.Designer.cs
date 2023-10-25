@@ -69,7 +69,7 @@
             this.txtQuantity.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtQuantity.HintForeColor = System.Drawing.Color.Empty;
+            this.txtQuantity.HintForeColor = System.Drawing.Color.DarkSlateGray;
             this.txtQuantity.HintText = "Nhập số lượng";
             this.txtQuantity.isPassword = false;
             this.txtQuantity.LineFocusedColor = System.Drawing.Color.Blue;
@@ -88,7 +88,7 @@
             this.txtPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPrice.HintForeColor = System.Drawing.Color.Empty;
+            this.txtPrice.HintForeColor = System.Drawing.Color.DarkSlateGray;
             this.txtPrice.HintText = "Nhập giá";
             this.txtPrice.isPassword = false;
             this.txtPrice.LineFocusedColor = System.Drawing.Color.Blue;
@@ -158,12 +158,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.label1.Location = new System.Drawing.Point(443, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 26);
+            this.label1.Size = new System.Drawing.Size(216, 29);
             this.label1.TabIndex = 23;
             this.label1.Text = "Thêm thiết bị mới";
             // 
@@ -172,7 +172,7 @@
             this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtName.HintForeColor = System.Drawing.Color.Empty;
+            this.txtName.HintForeColor = System.Drawing.Color.DarkSlateGray;
             this.txtName.HintText = "Nhập tên thiết bị";
             this.txtName.isPassword = false;
             this.txtName.LineFocusedColor = System.Drawing.Color.Blue;
@@ -294,7 +294,7 @@
             this.txtManufacturer.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtManufacturer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtManufacturer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtManufacturer.HintForeColor = System.Drawing.Color.Empty;
+            this.txtManufacturer.HintForeColor = System.Drawing.Color.DarkSlateGray;
             this.txtManufacturer.HintText = "Nhập nhà sản xuất";
             this.txtManufacturer.isPassword = false;
             this.txtManufacturer.LineFocusedColor = System.Drawing.Color.Blue;
