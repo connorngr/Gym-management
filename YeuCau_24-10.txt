@@ -1,0 +1,5 @@
+string: so sánh admin, mật khauar 123, user pass work trùng vô đc
+1 ngày: hoàn thiện, đăng nhập, chức năng
+Mô hình 3 lớp
+cái nút nhấn thông báo và f4 hay f3, alt+ F4
+code xong quay lại thêm, đăng nhập, quay video mườn tượng

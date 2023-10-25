@@ -65,12 +65,12 @@ namespace Gym_management
         private void btnReset_Click(object sender, EventArgs e)
         {
             Blank_TextBox();
-            MessageBox.Show("Clear all information succesfully!", "Notification");
+            MessageBox.Show("Xóa tất cả thông tin thành công!", "Thông báo");
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn ẩn Form hiện tại và quay lại Form Main?", "Xác nhận", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Bạn có muốn ẩn giao diện hiện tại và quay lại giao diện chính?", "Xác nhận", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 this.Hide();
@@ -82,11 +82,11 @@ namespace Gym_management
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
             string Payperiod = DTP.Value.Day.ToString() + DTP.Value.Month.ToString() + DTP.Value.Year.ToString();
-            int price = -1;
+            
             if (txtName.Text == "" || txtQuantity.Text == "" || txtPrice.Text=="" || 
                 txtManufacturer.Text=="" || string.IsNullOrEmpty(cmbCondition.Text) || string.IsNullOrEmpty(cmbLocation.Text))
             {
-                MessageBox.Show("Missing information", "Warning");
+                MessageBox.Show("Thiếu thông tin", "Cảnh báo");
             }
             else
             {
@@ -118,27 +118,33 @@ namespace Gym_management
                     {
                         throw new Exception("Tên nhà sản xuất không hợp lệ. Vui lòng nhập dưới 50 ký tự.");
                     }
-                    if (cmbCondition.Text != "New" && cmbCondition.Text != "Old")
+                    if (cmbCondition.Text != "Mới" && cmbCondition.Text != "Cũ")
                     {
-                        throw new Exception("Trang thái chỉ nhận giá trị 'Old' hoặc 'New'.");
+                        throw new Exception("Trang thái chỉ nhận giá trị 'Mới' hoặc 'Cũ'.");
                     }
-                    if (cmbLocation.Text != "shelf number 1" && cmbLocation.Text != "shelf number 2" && cmbLocation.Text != "shelf number 3")
+                    if (cmbLocation.Text != "Khu vực a" && cmbLocation.Text != "Khu vực b" && cmbLocation.Text != "Khu vực c")
                     {
-                        throw new Exception("Vị trí chỉ nhận giá trị 'shelf number 1' hoặc 'shelf number 2' hoặc 'shelf number 3'.");
+                        throw new Exception("Vị trí chỉ nhận giá trị 'Khu vực a' hoặc 'Khu vực b' hoặc 'Khu vực c'.");
                     }
                     conn.Open();
-                    string query = "insert into Equipment values('" + txtName.Text + "'," + "'" + txtQuantity.Text + "'," +
-                        " '" + txtPrice.Text + "'," +" " + "'" + txtManufacturer.Text + "'," + "'" + Payperiod + "'" +
-                        "," + "'" + cmbCondition.Text + "'," + "'" + cmbLocation.Text + "')";
+                    string query = "INSERT INTO Equipment (Name, Quantity, Price, Manufacturer, P_Date, Condition, Location) " +
+                        "VALUES (@Name, @Quantity, @Price, @Manufacturer, @P_Date, @Condition, @Location)";
                     SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@Name", txtName.Text);
+                    cmd.Parameters.AddWithValue("@Quantity", txtQuantity.Text);
+                    cmd.Parameters.AddWithValue("@Price", txtPrice.Text);
+                    cmd.Parameters.AddWithValue("@Manufacturer", txtManufacturer.Text);
+                    cmd.Parameters.AddWithValue("@P_Date", Payperiod);
+                    cmd.Parameters.AddWithValue("@Condition", cmbCondition.Text);
+                    cmd.Parameters.AddWithValue("@Location", cmbLocation.Text);
+
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Equipment successfully added");
+                    MessageBox.Show("Thêm thiết bị thành công");
                     Blank_TextBox();
                     conn.Close();
                 }
                 catch (Exception ex)
                 {
-                    conn.Close();
                     MessageBox.Show(ex.Message);
                 }
             }
@@ -148,7 +154,5 @@ namespace Gym_management
         {
             
         }
-
-        
     }
 }

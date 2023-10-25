@@ -56,40 +56,39 @@ namespace Gym_management
                 string query = "SELECT Account, Password FROM Login";
 
                 SqlCommand command = new SqlCommand(query, conn);
-
-                using (SqlDataReader reader = command.ExecuteReader())
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
                 {
-                    while (reader.Read())
-                    {
-                        string dbUsername = reader["Account"].ToString().Trim();
-                        string dbPassword = reader["Password"].ToString().Trim();
+                    string dbUsername = reader["Account"].ToString().Trim();
+                    string dbPassword = reader["Password"].ToString().Trim();
 
-                        if (uidTb.Text == dbUsername && passTb.Text == dbPassword)
-                        {
-                            isAuthenticated = true;
-                            break;
-                        }
+                    if (uidTb.Text == dbUsername && passTb.Text == dbPassword)
+                    {
+                        isAuthenticated = true;
+                        break;
                     }
                 }
-
                 if (isAuthenticated)
                 {
                     FormMain fm = new FormMain();
                     fm.Show();
                     this.Hide();
+                    conn.Close();
                 }
                 else
                 {
                     MessageBox.Show("Bạn nhập sai tài khoảng hoặc mật khẩu vui lòng nhập lại!");
                     uidTb.Text = "";
                     passTb.Text = "";
+                    conn.Close();
                 }
-                conn.Close();
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
         private void labExit_Click(object sender, EventArgs e)

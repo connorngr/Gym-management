@@ -54,7 +54,7 @@ namespace Gym_management
         {
             if (txtName.Text==""||txtPhone.Text==""||txtAge.Text=="")
             {
-                MessageBox.Show("Missing information", "Warning");
+                MessageBox.Show("Thiếu thông tin", "Cảnh báo");
             }
             else
             {
@@ -62,38 +62,41 @@ namespace Gym_management
                 {
                     if (txtPhone.Text.Length<10 || txtPhone.Text.Length>13)
                     {
-                        throw new Exception("Check your phone number again");
+                        throw new Exception("Số điện thoại phải từ 10 đến 13 số. Vui lòng nhập lại!");
                     }
                     bool checkAge = int.TryParse(txtAge.Text, out int age);
                     if (checkAge!=true)
                     {
-                        throw new Exception("Invalid age");
+                        throw new Exception("Tuổi không hợp lệ");
                     }
                     if (int.Parse(txtAge.Text)<=0 || int.Parse(txtAge.Text) > 100)
                     {
-                        throw new Exception("Invalid age");
+                        throw new Exception("Tuổi không hợp lệ");
                     }
                     if (txtName.Text.Length > 50)
                     {
                         throw new Exception("Tên không hợp lệ. Vui lòng nhập dưới 50 ký tự.");
                     }
-                    if (cmbGender.Text != "Male" && cmbGender.Text != "Female" )
+                    if (cmbGender.Text != "Nam" && cmbGender.Text != "Nữ" )
                     {
-                        throw new Exception("Giới tính chỉ nhận giá trị là 'Male' hoặc 'Female'.");
+                        throw new Exception("Giới tính chỉ nhận giá trị là 'Nam' hoặc 'Nữ'.");
                     }
                     conn.Open();
-                    string query = "insert into Member values('"+txtName.Text+"'," +
-                        "'"+txtPhone.Text+"', '"+cmbGender.Text+"'," +
-                        "'"+txtAge.Text+"')";
+                    string query = "INSERT INTO Member (Name, Phone, Gender, Age) " +
+                        "VALUES (@Name, @Phone, @Gender, @Age)";
                     SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@Name", txtName.Text);
+                    cmd.Parameters.AddWithValue("@Phone", txtPhone.Text);
+                    cmd.Parameters.AddWithValue("@Gender", cmbGender.Text);
+                    cmd.Parameters.AddWithValue("@Age", txtAge.Text);
+
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Member successfully added");
+                    MessageBox.Show("Thêm thành viên thành công.");
                     Blank_TextBox();
                     conn.Close();
                 }
                 catch(Exception ex)
                 {
-                    conn.Close();
                     MessageBox.Show(ex.Message);
                 }
             }
@@ -107,12 +110,12 @@ namespace Gym_management
         private void btnReset_Click(object sender, EventArgs e)
         {
             Blank_TextBox();
-            MessageBox.Show("Clear all information succesfully!", "Notification");
+            MessageBox.Show("Xóa tất cả thông tin thành công!", "Thông báo");
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn ẩn Form hiện tại và quay lại Form Main?", "Xác nhận", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Bạn có muốn ẩn giao diện hiện tại và quay lại giao diện chính?", "Xác nhận", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 this.Hide();
@@ -120,7 +123,5 @@ namespace Gym_management
                 formMain.Show();
             }
         }
-
-        
     }
 }

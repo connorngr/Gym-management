@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Payment));
             this.label2 = new System.Windows.Forms.Label();
             this.MemberGrid = new Guna.UI.WinForms.GunaDataGridView();
@@ -62,34 +62,34 @@
             // MemberGrid
             // 
             this.MemberGrid.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.MemberGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.MemberGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.MemberGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.MemberGrid.BackgroundColor = System.Drawing.Color.White;
             this.MemberGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.MemberGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.MemberGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MemberGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MemberGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.MemberGrid.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.MemberGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MemberGrid.DefaultCellStyle = dataGridViewCellStyle6;
             this.MemberGrid.EnableHeadersVisualStyles = false;
             this.MemberGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.MemberGrid.Location = new System.Drawing.Point(256, 70);
-            this.MemberGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MemberGrid.Margin = new System.Windows.Forms.Padding(2);
             this.MemberGrid.Name = "MemberGrid";
             this.MemberGrid.ReadOnly = true;
             this.MemberGrid.RowHeadersVisible = false;
@@ -127,14 +127,14 @@
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtID.HintForeColor = System.Drawing.Color.Empty;
-            this.txtID.HintText = "";
+            this.txtID.HintText = "Nhập mã thành viên";
             this.txtID.isPassword = false;
             this.txtID.LineFocusedColor = System.Drawing.Color.Blue;
             this.txtID.LineIdleColor = System.Drawing.Color.DodgerBlue;
             this.txtID.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.txtID.LineThickness = 4;
             this.txtID.Location = new System.Drawing.Point(23, 148);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(206, 44);
             this.txtID.TabIndex = 33;
@@ -149,9 +149,9 @@
             this.label5.Location = new System.Drawing.Point(20, 122);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 20);
+            this.label5.Size = new System.Drawing.Size(121, 20);
             this.label5.TabIndex = 26;
-            this.label5.Text = "ID";
+            this.label5.Text = "Mã thành viên";
             // 
             // label8
             // 
@@ -162,9 +162,9 @@
             this.label8.Location = new System.Drawing.Point(38, 19);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(300, 20);
+            this.label8.Size = new System.Drawing.Size(273, 20);
             this.label8.TabIndex = 29;
-            this.label8.Text = "Group AAA - GYM management tool";
+            this.label8.Text = "Nhóm AB - Công cụ quản lý GYM";
             // 
             // label10
             // 
@@ -190,7 +190,7 @@
             this.DTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTP.ForeColor = System.Drawing.Color.Black;
             this.DTP.Location = new System.Drawing.Point(23, 314);
-            this.DTP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DTP.Margin = new System.Windows.Forms.Padding(2);
             this.DTP.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DTP.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DTP.Name = "DTP";
@@ -209,14 +209,14 @@
             this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtAmount.HintForeColor = System.Drawing.Color.Empty;
-            this.txtAmount.HintText = "";
+            this.txtAmount.HintText = "Nhập số tiền thanh toán";
             this.txtAmount.isPassword = false;
             this.txtAmount.LineFocusedColor = System.Drawing.Color.Blue;
             this.txtAmount.LineIdleColor = System.Drawing.Color.DodgerBlue;
             this.txtAmount.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.txtAmount.LineThickness = 4;
             this.txtAmount.Location = new System.Drawing.Point(24, 245);
-            this.txtAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(4);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(206, 44);
             this.txtAmount.TabIndex = 43;
@@ -231,9 +231,9 @@
             this.label1.Location = new System.Drawing.Point(20, 219);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 20);
+            this.label1.Size = new System.Drawing.Size(158, 20);
             this.label1.TabIndex = 42;
-            this.label1.Text = "Amount";
+            this.label1.Text = "Số tiền thanh toán";
             // 
             // btnBack
             // 
@@ -244,7 +244,7 @@
             this.btnBack.ActiveLineColor = System.Drawing.Color.Snow;
             this.btnBack.BackColor = System.Drawing.SystemColors.Control;
             this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
-            this.btnBack.ButtonText = "Back";
+            this.btnBack.ButtonText = "Trở lại";
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.RoyalBlue;
@@ -270,7 +270,7 @@
             this.BtnPay.ActiveLineColor = System.Drawing.Color.Snow;
             this.BtnPay.BackColor = System.Drawing.SystemColors.Control;
             this.BtnPay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnPay.BackgroundImage")));
-            this.BtnPay.ButtonText = "Pay";
+            this.BtnPay.ButtonText = "Thanh toán";
             this.BtnPay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnPay.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPay.ForeColor = System.Drawing.Color.SeaGreen;
@@ -279,10 +279,10 @@
             this.BtnPay.IdleFillColor = System.Drawing.Color.White;
             this.BtnPay.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.BtnPay.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnPay.Location = new System.Drawing.Point(153, 375);
+            this.BtnPay.Location = new System.Drawing.Point(142, 375);
             this.BtnPay.Margin = new System.Windows.Forms.Padding(4);
             this.BtnPay.Name = "BtnPay";
-            this.BtnPay.Size = new System.Drawing.Size(89, 48);
+            this.BtnPay.Size = new System.Drawing.Size(100, 48);
             this.BtnPay.TabIndex = 39;
             this.BtnPay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnPay.Click += new System.EventHandler(this.BtnPay_Click);

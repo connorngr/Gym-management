@@ -79,7 +79,7 @@ namespace Gym_management
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn ẩn Form hiện tại và quay lại Form Main?", "Xác nhận", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Bạn có muốn ẩn giao diện hiện tại và quay lại giao diện chính?", "Xác nhận", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 this.Hide();
@@ -91,15 +91,20 @@ namespace Gym_management
         private void btnSearch_Click(object sender, EventArgs e)
         {
             conn.Open();
-            string query = "select * from Member where Name LIKE '%"+txtSearchName.Text+"%'";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            string query = "SELECT * FROM Member WHERE Name LIKE '%' + @SearchText + '%';";
+            SqlCommand searchCmd = new SqlCommand(query, conn);
+            searchCmd.Parameters.AddWithValue("@SearchText", txtSearchName.Text);
+
+            SqlDataAdapter adapter = new SqlDataAdapter(searchCmd);
             var ds = new DataSet();
             adapter.Fill(ds);
+
             MemberGrid.DataSource = ds.Tables[0];
             if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count == 0)
             {
-                MessageBox.Show("The name you looked for isn't in the list.", "Confident");
+                MessageBox.Show("Tên bạn tìm kiếm không có trong danh sách.", "Thông tin");
             }
+
             conn.Close();
         }
 

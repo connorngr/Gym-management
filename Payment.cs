@@ -56,7 +56,7 @@ namespace Gym_management
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn ẩn Form hiện tại và quay lại Form Main?", "Xác nhận", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Bạn có muốn ẩn giao diện hiện tại và quay lại giao diện chính?", "Xác nhận", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 this.Hide();
@@ -106,45 +106,49 @@ namespace Gym_management
                     bool checkID = int.TryParse(txtID.Text, out int ID);
                     if (checkID != true)
                     {
-                        throw new Exception("Invalid ID.It should be 1 figure");
+                        throw new Exception("ID không hợp lệ. Nó phải chỉ có 1 chữ số.");
                     }
                 
-                string Payperiod = DTP.Value.Month.ToString() + DTP.Value.Year.ToString();
-                conn.Open();
-                //SqlAdapter is used to fill a dataset
-                SqlDataAdapter sda = new SqlDataAdapter("select count(*) from Payment where MemID = " +
-                    "'" + txtID.Text + "' and Date = '" + Payperiod + "'", conn);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
+                    string Payperiod = DTP.Value.Month.ToString() + DTP.Value.Year.ToString();
+                    conn.Open();
 
-                //txtTest.Text = dt.Rows[0][0].ToString(); // Co gia tri tra ve 1, ko co gia tri tra ve 0
-                if (dt.Rows[0][0].ToString() == "1")
-                {
-                    MessageBox.Show("Đã thanh toán tháng này.");
-                }
-                else
-                {
-                    MessageBoxButtons messageBoxButtons = MessageBoxButtons.YesNo;
-                    string info = string.Format("ID: {0}\nAmount: {1}\nIs this information correct?", txtID.Text, txtAmount.Text);
-                    DialogResult result = MessageBox.Show(info, "Check information", messageBoxButtons);
-                    if (result == DialogResult.Yes)
+                    // Kiểm tra xem đã thanh toán tháng này chưa
+                    string checkQuery = "SELECT COUNT(*) FROM Payment WHERE MemID = @MemID AND Date = @Date";
+                    SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
+                    checkCmd.Parameters.AddWithValue("@MemID", txtID.Text);
+                    checkCmd.Parameters.AddWithValue("@Date", Payperiod);
+                    int paymentCount = (int)checkCmd.ExecuteScalar();
+
+                    if (paymentCount == 1)
                     {
-                        string query = "insert into Payment values(" + txtID.Text + "," + Payperiod + "," + txtAmount.Text + ")";
-                        SqlCommand cmd = new SqlCommand(query, conn);
-                        try
+                        conn.Close();
+                        MessageBox.Show("Đã thanh toán tháng này.");
+                    }
+                    else
+                    {
+                        MessageBoxButtons messageBoxButtons = MessageBoxButtons.YesNo;
+                        string info = string.Format("ID: {0}\nSố tiền: {1}\nThông tin này có chính xác không?", txtID.Text, txtAmount.Text);
+                        DialogResult result = MessageBox.Show(info, "Kiểm tra thông tin", messageBoxButtons);
+
+                        if (result == DialogResult.Yes)
                         {
-                            cmd.ExecuteNonQuery();
+                            // Thực hiện chèn dữ liệu vào bảng Payment
+                            string insertQuery = "INSERT INTO Payment (MemID, Date, Amount) VALUES (@MemID, @Date, @Amount)";
+                            SqlCommand insertCmd = new SqlCommand(insertQuery, conn);
+                            insertCmd.Parameters.AddWithValue("@MemID", txtID.Text);
+                            insertCmd.Parameters.AddWithValue("@Date", Payperiod);
+                            insertCmd.Parameters.AddWithValue("@Amount", txtAmount.Text);
+
+                            insertCmd.ExecuteNonQuery();
                             MessageBox.Show("Số tiền thanh toán thành công.");
                         }
-                        catch (Exception)
+                        else
                         {
-                            MessageBox.Show("ID Not Found", "Warning");
+                            MessageBox.Show("Không tìm thấy Mã thành viên", "Thông báo");
                         }
-
-                    }                                    
-                }
-                conn.Close();
-                populate();
+                        conn.Close();
+                    }
+                    populate();
                 }
                 catch (Exception ex)
                 {

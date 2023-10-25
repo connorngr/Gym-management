@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateDeleteEquipment));
             this.labExit = new System.Windows.Forms.Label();
             this.cmbLocation = new System.Windows.Forms.ComboBox();
@@ -78,9 +78,9 @@
             this.cmbLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbLocation.FormattingEnabled = true;
             this.cmbLocation.Items.AddRange(new object[] {
-            "shelf number 1",
-            "shelf number 2",
-            "shelf number 3"});
+            "Khu vực a",
+            "Khu vực b",
+            "Khu vực c"});
             this.cmbLocation.Location = new System.Drawing.Point(125, 282);
             this.cmbLocation.Margin = new System.Windows.Forms.Padding(2);
             this.cmbLocation.Name = "cmbLocation";
@@ -96,9 +96,9 @@
             this.label10.Location = new System.Drawing.Point(24, 287);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(78, 20);
+            this.label10.Size = new System.Drawing.Size(46, 20);
             this.label10.TabIndex = 59;
-            this.label10.Text = "Location";
+            this.label10.Text = "Vị trí";
             // 
             // txtName
             // 
@@ -106,7 +106,7 @@
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtName.HintForeColor = System.Drawing.Color.Empty;
-            this.txtName.HintText = "Equipment\'s name";
+            this.txtName.HintText = "Nhập tên thiết bị";
             this.txtName.isPassword = false;
             this.txtName.LineFocusedColor = System.Drawing.Color.Blue;
             this.txtName.LineIdleColor = System.Drawing.Color.DodgerBlue;
@@ -128,17 +128,17 @@
             this.label6.Location = new System.Drawing.Point(23, 151);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 20);
+            this.label6.Size = new System.Drawing.Size(99, 20);
             this.label6.TabIndex = 56;
-            this.label6.Text = "Name";
+            this.label6.Text = "Tên thiết bị";
             // 
             // cmbCondition
             // 
             this.cmbCondition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCondition.FormattingEnabled = true;
             this.cmbCondition.Items.AddRange(new object[] {
-            "New",
-            "Old"});
+            "Mới",
+            "Cũ"});
             this.cmbCondition.Location = new System.Drawing.Point(125, 244);
             this.cmbCondition.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCondition.Name = "cmbCondition";
@@ -151,7 +151,7 @@
             this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtQuantity.HintForeColor = System.Drawing.Color.Empty;
-            this.txtQuantity.HintText = "Equipment\'s quantity";
+            this.txtQuantity.HintText = "Nhập số lượng";
             this.txtQuantity.isPassword = false;
             this.txtQuantity.LineFocusedColor = System.Drawing.Color.Blue;
             this.txtQuantity.LineIdleColor = System.Drawing.Color.DodgerBlue;
@@ -170,7 +170,7 @@
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtPrice.HintForeColor = System.Drawing.Color.Empty;
-            this.txtPrice.HintText = "Equipment\'s price";
+            this.txtPrice.HintText = "Nhập giá";
             this.txtPrice.isPassword = false;
             this.txtPrice.LineFocusedColor = System.Drawing.Color.Blue;
             this.txtPrice.LineIdleColor = System.Drawing.Color.DodgerBlue;
@@ -192,9 +192,9 @@
             this.label3.Location = new System.Drawing.Point(23, 242);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 20);
+            this.label3.Size = new System.Drawing.Size(90, 20);
             this.label3.TabIndex = 52;
-            this.label3.Text = "Condition";
+            this.label3.Text = "Trạng thái";
             // 
             // label4
             // 
@@ -205,9 +205,9 @@
             this.label4.Location = new System.Drawing.Point(23, 326);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 20);
+            this.label4.Size = new System.Drawing.Size(80, 20);
             this.label4.TabIndex = 51;
-            this.label4.Text = "Quantity";
+            this.label4.Text = "Số lượng";
             // 
             // label5
             // 
@@ -218,9 +218,9 @@
             this.label5.Location = new System.Drawing.Point(24, 408);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 20);
+            this.label5.Size = new System.Drawing.Size(37, 20);
             this.label5.TabIndex = 50;
-            this.label5.Text = "Price";
+            this.label5.Text = "Giá";
             // 
             // label7
             // 
@@ -231,9 +231,9 @@
             this.label7.Location = new System.Drawing.Point(23, 35);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(300, 20);
+            this.label7.Size = new System.Drawing.Size(273, 20);
             this.label7.TabIndex = 49;
-            this.label7.Text = "Group AAA - GYM management tool";
+            this.label7.Text = "Nhóm AB - Công cụ quản lý GYM";
             // 
             // label1
             // 
@@ -244,9 +244,9 @@
             this.label1.Location = new System.Drawing.Point(387, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 26);
+            this.label1.Size = new System.Drawing.Size(185, 26);
             this.label1.TabIndex = 48;
-            this.label1.Text = "Update and delete";
+            this.label1.Text = "Cập nhật và xóa";
             // 
             // txtID
             // 
@@ -254,7 +254,7 @@
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtID.HintForeColor = System.Drawing.Color.Empty;
-            this.txtID.HintText = "Equipment\'s ID";
+            this.txtID.HintText = "Nhập mã thiết bị";
             this.txtID.isPassword = false;
             this.txtID.LineFocusedColor = System.Drawing.Color.Blue;
             this.txtID.LineIdleColor = System.Drawing.Color.DodgerBlue;
@@ -276,38 +276,38 @@
             this.label2.Location = new System.Drawing.Point(24, 77);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 20);
+            this.label2.Size = new System.Drawing.Size(93, 20);
             this.label2.TabIndex = 63;
-            this.label2.Text = "ID";
+            this.label2.Text = "Mã thiết bị";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // EquipmentGrid
             // 
             this.EquipmentGrid.AllowUserToAddRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.EquipmentGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.EquipmentGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.EquipmentGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.EquipmentGrid.BackgroundColor = System.Drawing.Color.White;
             this.EquipmentGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EquipmentGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.EquipmentGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EquipmentGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EquipmentGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.EquipmentGrid.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EquipmentGrid.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EquipmentGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.EquipmentGrid.EnableHeadersVisualStyles = false;
             this.EquipmentGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.EquipmentGrid.Location = new System.Drawing.Point(307, 122);
@@ -350,12 +350,12 @@
             this.label8.BackColor = System.Drawing.SystemColors.Control;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label8.Location = new System.Drawing.Point(368, 94);
+            this.label8.Location = new System.Drawing.Point(342, 94);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(225, 20);
+            this.label8.Size = new System.Drawing.Size(290, 20);
             this.label8.TabIndex = 65;
-            this.label8.Text = "Select equipment to delete";
+            this.label8.Text = "Nhấn 2 lần vào dòng bạn muốn xóa";
             // 
             // txtSearch
             // 
@@ -363,7 +363,7 @@
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtSearch.HintForeColor = System.Drawing.Color.Empty;
-            this.txtSearch.HintText = "Equipment\'s value want find";
+            this.txtSearch.HintText = "Nhập tên hoặc mã thiết bị";
             this.txtSearch.isPassword = false;
             this.txtSearch.LineFocusedColor = System.Drawing.Color.Blue;
             this.txtSearch.LineIdleColor = System.Drawing.Color.DodgerBlue;
@@ -385,7 +385,7 @@
             this.btnSearch.ActiveLineColor = System.Drawing.Color.Snow;
             this.btnSearch.BackColor = System.Drawing.SystemColors.Control;
             this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
-            this.btnSearch.ButtonText = "Search";
+            this.btnSearch.ButtonText = "Tìm kiếm";
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.DarkOrange;
@@ -411,7 +411,7 @@
             this.BtnRefresh.ActiveLineColor = System.Drawing.Color.Snow;
             this.BtnRefresh.BackColor = System.Drawing.SystemColors.Control;
             this.BtnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnRefresh.BackgroundImage")));
-            this.BtnRefresh.ButtonText = "Refresh";
+            this.BtnRefresh.ButtonText = "Hiển thị tất cả";
             this.BtnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnRefresh.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRefresh.ForeColor = System.Drawing.Color.SeaGreen;
@@ -423,7 +423,7 @@
             this.BtnRefresh.Location = new System.Drawing.Point(1066, 68);
             this.BtnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.BtnRefresh.Name = "BtnRefresh";
-            this.BtnRefresh.Size = new System.Drawing.Size(89, 48);
+            this.BtnRefresh.Size = new System.Drawing.Size(114, 48);
             this.BtnRefresh.TabIndex = 78;
             this.BtnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
@@ -437,7 +437,7 @@
             this.butRefresh.ActiveLineColor = System.Drawing.Color.Snow;
             this.butRefresh.BackColor = System.Drawing.SystemColors.Control;
             this.butRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("butRefresh.BackgroundImage")));
-            this.butRefresh.ButtonText = "Refresh";
+            this.butRefresh.ButtonText = "Xóa thông tin";
             this.butRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.butRefresh.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butRefresh.ForeColor = System.Drawing.Color.RoyalBlue;
@@ -446,10 +446,10 @@
             this.butRefresh.IdleFillColor = System.Drawing.Color.White;
             this.butRefresh.IdleForecolor = System.Drawing.Color.RoyalBlue;
             this.butRefresh.IdleLineColor = System.Drawing.Color.RoyalBlue;
-            this.butRefresh.Location = new System.Drawing.Point(141, 553);
+            this.butRefresh.Location = new System.Drawing.Point(141, 544);
             this.butRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.butRefresh.Name = "butRefresh";
-            this.butRefresh.Size = new System.Drawing.Size(89, 48);
+            this.butRefresh.Size = new System.Drawing.Size(89, 57);
             this.butRefresh.TabIndex = 74;
             this.butRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.butRefresh.Click += new System.EventHandler(this.butRefresh_Click);
@@ -463,7 +463,7 @@
             this.btnBack.ActiveLineColor = System.Drawing.Color.Snow;
             this.btnBack.BackColor = System.Drawing.SystemColors.Control;
             this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
-            this.btnBack.ButtonText = "Back";
+            this.btnBack.ButtonText = "Trở lại";
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.RoyalBlue;
@@ -472,7 +472,7 @@
             this.btnBack.IdleFillColor = System.Drawing.Color.White;
             this.btnBack.IdleForecolor = System.Drawing.Color.RoyalBlue;
             this.btnBack.IdleLineColor = System.Drawing.Color.RoyalBlue;
-            this.btnBack.Location = new System.Drawing.Point(27, 553);
+            this.btnBack.Location = new System.Drawing.Point(24, 550);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(89, 48);
@@ -489,7 +489,7 @@
             this.btnDel.ActiveLineColor = System.Drawing.Color.Snow;
             this.btnDel.BackColor = System.Drawing.SystemColors.Control;
             this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
-            this.btnDel.ButtonText = "Delete";
+            this.btnDel.ButtonText = "Xóa";
             this.btnDel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDel.ForeColor = System.Drawing.Color.Crimson;
@@ -515,7 +515,7 @@
             this.BtnUpdate.ActiveLineColor = System.Drawing.Color.Snow;
             this.BtnUpdate.BackColor = System.Drawing.SystemColors.Control;
             this.BtnUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnUpdate.BackgroundImage")));
-            this.BtnUpdate.ButtonText = "Update";
+            this.BtnUpdate.ButtonText = "Cập nhật";
             this.BtnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnUpdate.ForeColor = System.Drawing.Color.SeaGreen;

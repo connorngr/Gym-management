@@ -65,7 +65,7 @@ namespace Gym_management
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn ẩn Form hiện tại và quay lại Form Main?", "Xác nhận", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Bạn có muốn ẩn giao diện hiện tại và quay lại giao diện chính?", "Xác nhận", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 this.Hide();
@@ -111,15 +111,25 @@ namespace Gym_management
                     try
                     {
                         conn.Open();
-                        string check = "delete from Payment where MemID=" + key + " ;";
-                        SqlCommand cmd = new SqlCommand(check, conn);
-                        cmd.ExecuteNonQuery();
-                        string query = "delete from Member where MemID=" + key + ";";
-                        cmd = new SqlCommand(query, conn);
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Member deleted successfully");
+
+                        // Xóa dữ liệu từ bảng Payment
+                        string deletePaymentQuery = "DELETE FROM Payment WHERE MemID = @MemID";
+                        SqlCommand deletePaymentCmd = new SqlCommand(deletePaymentQuery, conn);
+                        deletePaymentCmd.Parameters.AddWithValue("@MemID", key);
+                        deletePaymentCmd.ExecuteNonQuery();
+
+                        // Xóa dữ liệu từ bảng Member
+                        string deleteMemberQuery = "DELETE FROM Member WHERE MemID = @MemID";
+                        SqlCommand deleteMemberCmd = new SqlCommand(deleteMemberQuery, conn);
+                        deleteMemberCmd.Parameters.AddWithValue("@MemID", key);
+                        deleteMemberCmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Xóa thành viên thành công.");
+
                         conn.Close();
+
                         Populate();
+
                         key = -1;
                     }
                     catch (Exception ex)
@@ -135,7 +145,7 @@ namespace Gym_management
            
             if (key == -1 || txtName.Text == "" || txtPhone.Text == "" || txtAge.Text == "")
             {
-                MessageBox.Show("Select member to update");
+                MessageBox.Show("Vui lòng nhấn 2 lần vào dòng bạn muốn xóa");
             }
             else
             {
@@ -143,39 +153,46 @@ namespace Gym_management
                 {
                     if (txtPhone.Text.Length < 10 || txtPhone.Text.Length > 13)
                     {
-                        throw new Exception("Check your phone number again");
+                        throw new Exception("Số điện thoại không tồn tại. Số điện thoại chỉ từ 10 đến 13 số");
                     }
                     bool checkAge = int.TryParse(txtAge.Text, out int age);
                     if (checkAge != true)
                     {
-                        throw new Exception("Invalid age");
+                        throw new Exception("Tuổi không hợp lệ");
                     }
                     if (int.Parse(txtAge.Text) <= 0 || int.Parse(txtAge.Text) > 100)
                     {
-                        throw new Exception("Invalid age");
+                        throw new Exception("Tuổi không hợp lệ");
                     }
                     if (txtName.Text.Length > 50)
                     {
                         throw new Exception("Tên không hợp lệ. Vui lòng nhập dưới 50 ký tự.");
                     }
-                    if (cmbGender.Text != "Male" && cmbGender.Text != "Female")
+                    if (cmbGender.Text != "Nam" && cmbGender.Text != "Nữ")
                     {
-                        throw new Exception("Invalid gender.");
+                        throw new Exception("Giới tính không hợp lệ.");
                     }
                     conn.Open();
-                    string message = $"Are you sure you want to update the member with the following details?\n\nName: {txtName.Text}\nPhone: {txtPhone.Text}\nGender: {cmbGender.Text}\nAge: {txtAge.Text}";
-                    DialogResult result = MessageBox.Show(message, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    string message = $"Bạn có chắc chắn muốn cập nhật thông tin thành viên với các thông tin sau?\n\nTên: {txtName.Text}\nSố điện thoại: {txtPhone.Text}\nGiới tính: {cmbGender.Text}\nTuổi: {txtAge.Text}";
+                    DialogResult result = MessageBox.Show(message, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (result == DialogResult.Yes)
                     {
-                        string query = "update Member set Name='" + txtName.Text + "', Phone='" + txtPhone.Text + "'," +
-                        " Gender='" + cmbGender.Text + "', Age='" + txtAge.Text + "' where MemID=" + key + ";";
+                        string query = "UPDATE Member SET Name = @Name, Phone = @Phone, Gender = @Gender, Age = @Age WHERE MemID = @MemID";
                         SqlCommand cmd = new SqlCommand(query, conn);
+                        cmd.Parameters.AddWithValue("@Name", txtName.Text);
+                        cmd.Parameters.AddWithValue("@Phone", txtPhone.Text);
+                        cmd.Parameters.AddWithValue("@Gender", cmbGender.Text);
+                        cmd.Parameters.AddWithValue("@Age", txtAge.Text);
+                        cmd.Parameters.AddWithValue("@MemID", key);
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("Member updated successfully");
+
+                        MessageBox.Show("Cập nhật thông tin thành viên thành công");
                         conn.Close();
                         Populate();
                     }
+                    conn.Close();
                 }
                 catch (Exception ex)
                 {
@@ -184,7 +201,5 @@ namespace Gym_management
             
             }
         }
-
-        
     }
 }

@@ -78,7 +78,7 @@ namespace Gym_management
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn ẩn Form hiện tại và quay lại Form Main?", "Xác nhận", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Bạn có muốn ẩn giao diện hiện tại và quay lại giao diện chính?", "Xác nhận", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 this.Hide();
@@ -113,41 +113,44 @@ namespace Gym_management
         {
             if (txtID.Text == "")
             {
-                MessageBox.Show("Please select the ID you want to delete or click select in table");
+                MessageBox.Show("Vui lòng chọn ID bạn muốn xóa hoặc nhấp chọn trong bảng.");
             }
             else
             {
-                DialogResult result = MessageBox.Show("Are you sure you want to delete this Equipemnt?\n\n" +
-                                        "Information to be deleted:\n" +
-                                        "- Equipemnt ID: " + txtID.Text + "\n" +
-                                        "- Equipemnt Name: " + txtName.Text + "\n" +
-                                        "- Equipemnt Quantity: " + txtQuantity.Text + "\n" +
-                                        "- Equipemnt Price: " + txtPrice.Text + "\n" +
-                                        "- Equipemnt Condition: " + cmbCondition.Text + "\n" +
-                                        "- Equipemnt Location: " + cmbLocation.Text + "\n" +
-                                        "- Payments associated with the Equipemnt", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa thiết bị này?\n\n" +
+                                    "Thông tin sẽ bị xóa:\n" +
+                                    "- Mã thiết bị: " + txtID.Text + "\n" +
+                                    "- Tên thiết bị: " + txtName.Text + "\n" +
+                                    "- Số lượng thiết bị: " + txtQuantity.Text + "\n" +
+                                    "- Giá thiết bị: " + txtPrice.Text + "\n" +
+                                    "- Tình trạng thiết bị: " + cmbCondition.Text + "\n" +
+                                    "- Vị trí thiết bị: " + cmbLocation.Text + "\n" +
+                                    "- Các thanh toán liên quan đến thiết bị", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     try
                     {
-                        bool checkID = int.TryParse(txtID.Text, out int tID);
-                        if (!checkID)
+                        if (!int.TryParse(txtID.Text, out int tID))
                         {
-                            throw new Exception("ID phải là một số nguyên.");
+                            throw new Exception("Mã thiết bị phải là một số nguyên không âm.");
                         }
+
                         conn.Open();
-                        string query = "delete from Equipment where ID=" + txtID.Text + ";";
+                        string query = "DELETE FROM Equipment WHERE ID = @ID";
                         SqlCommand cmd = new SqlCommand(query, conn);
-                        cmd.ExecuteNonQuery();
-                        if (cmd.ExecuteNonQuery() == 0)
+                        cmd.Parameters.AddWithValue("@ID", txtID.Text);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected == 0)
                         {
-                            MessageBox.Show("Không tồn tại ID bạn muốn xóa", "Thông báo");
+                            MessageBox.Show("ID bạn muốn xóa không tồn tại.", "Thông báo");
                         }
                         else
                         {
-                            MessageBox.Show("Equipment delete to finish");
+                            MessageBox.Show("Xóa thiết bị thành công.");
                             Populate();
                         }
+
                         conn.Close();
                     }
                     catch (Exception ex)
@@ -163,7 +166,7 @@ namespace Gym_management
             if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtID.Text) || string.IsNullOrEmpty(txtPrice.Text) || string.IsNullOrEmpty(txtQuantity.Text)
                 || string.IsNullOrEmpty(cmbCondition.Text) || string.IsNullOrEmpty(cmbLocation.Text))
             {
-                MessageBox.Show("Missing information");
+                MessageBox.Show("Nhập thiếu thông tin. Vui lòng nhập lại!");
             }
             else
             {
@@ -191,28 +194,28 @@ namespace Gym_management
                     {
                         throw new Exception("Tên không hợp lệ. Vui lòng nhập dưới 50 ký tự.");
                     }
-                    if (cmbCondition.Text != "New" && cmbCondition.Text != "Old")
+                    if (cmbCondition.Text != "Mới" && cmbCondition.Text != "Cũ")
                     {
-                        throw new Exception("Trang thái chỉ nhận giá trị 'Old' hoặc 'New'.");
+                        throw new Exception("Trang thái chỉ nhận giá trị 'Mới' hoặc 'Cũ'.");
                     }
                     if (cmbLocation.Text != "shelf number 1" && cmbLocation.Text != "shelf number 2" && cmbLocation.Text != "shelf number 3")
                     {
-                        throw new Exception("Vị trí chỉ nhận giá trị 'shelf number 1' hoặc 'shelf number 2' hoặc 'shelf number 3'.");
+                        throw new Exception("Vị trí chỉ nhận giá trị 'Khu vực a' hoặc 'Khu vực b' hoặc 'Khu vực c'.");
                     }
                     bool checkID = int.TryParse(txtID.Text, out int tID);
                     if (!checkID)
                     {
-                        throw new Exception("ID phải là một số nguyên.");
+                        throw new Exception("Mã thiết bị phải là một số nguyên.");
                     }
-                    DialogResult result = MessageBox.Show("Are you sure you want to delete this Equipemnt?\n\n" +
-                                        "Information to be deleted:\n" +
-                                        "- Equipemnt ID: " + txtID.Text + "\n" +
-                                        "- Equipemnt Name: " + txtName.Text + "\n" +
-                                        "- Equipemnt Quantity: " + txtQuantity.Text + "\n" +
-                                        "- Equipemnt Price: " + txtPrice.Text + "\n" +
-                                        "- Equipemnt Condition: " + cmbCondition.Text + "\n" +
-                                        "- Equipemnt Location: " + cmbLocation.Text + "\n" +
-                                        "- Payments associated with the Equipemnt", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa thiết bị này?\n\n" +
+                                                            "Thông tin sẽ bị xóa:\n" +
+                                                            "- ID thiết bị: " + txtID.Text + "\n" +
+                                                            "- Tên thiết bị: " + txtName.Text + "\n" +
+                                                            "- Số lượng thiết bị: " + txtQuantity.Text + "\n" +
+                                                            "- Giá thiết bị: " + txtPrice.Text + "\n" +
+                                                            "- Tình trạng thiết bị: " + cmbCondition.Text + "\n" +
+                                                            "- Vị trí thiết bị: " + cmbLocation.Text + "\n" +
+                                                            "- Các thanh toán liên quan đến thiết bị", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
                         conn.Open();
@@ -229,16 +232,14 @@ namespace Gym_management
                             cmd.Parameters.AddWithValue("@Quantity", txtQuantity.Text);
                             cmd.Parameters.AddWithValue("@Condition", cmbCondition.Text);
                             cmd.Parameters.AddWithValue("@Location", cmbLocation.Text);
-                            cmd.Parameters.AddWithValue("@ID", txtID.Text);
-
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show("Member updated successfully");
+                            cmd.Parameters.AddWithValue("@ID", txtID.Text); cmd.ExecuteNonQuery();
+                            MessageBox.Show("Cập nhật thiết bị thành công");
                             conn.Close();
                             Populate();
                         }
                         else
                         {
-                            MessageBox.Show("Không tồn tại ID trong bảng.");
+                            MessageBox.Show("Không tồn tại mã thiết bị này trong bảng.");
                             conn.Close();
                         }
                     }
@@ -260,7 +261,7 @@ namespace Gym_management
             {
                 if(txtSearch.Text=="")
                 {
-                    throw new Exception("Vui lòng nhập giá trị bán muốn tìm. nó không thể string.Empty");
+                    throw new Exception("Vui lòng nhập giá trị bán muốn tìm. Nó không thể rỗng");
                 }    
                 conn.Open();
                 string searchText = txtSearch.Text;
@@ -281,7 +282,7 @@ namespace Gym_management
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show(ex.Message, "Thông báo");
             }
         }
 

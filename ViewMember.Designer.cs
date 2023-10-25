@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewMember));
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -52,9 +52,9 @@
             this.label7.Location = new System.Drawing.Point(17, 19);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(300, 20);
+            this.label7.Size = new System.Drawing.Size(273, 20);
             this.label7.TabIndex = 7;
-            this.label7.Text = "Group AAA - GYM management tool";
+            this.label7.Text = "Nhóm AB - Công cụ quản lý GYM";
             // 
             // label8
             // 
@@ -79,9 +79,9 @@
             this.label1.Location = new System.Drawing.Point(464, 12);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 26);
+            this.label1.Size = new System.Drawing.Size(178, 26);
             this.label1.TabIndex = 5;
-            this.label1.Text = "View members";
+            this.label1.Text = "Xem thành viên";
             // 
             // txtSearchName
             // 
@@ -89,14 +89,14 @@
             this.txtSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtSearchName.HintForeColor = System.Drawing.Color.Empty;
-            this.txtSearchName.HintText = "Search ";
+            this.txtSearchName.HintText = "Nhập tên muốn tìm";
             this.txtSearchName.isPassword = false;
             this.txtSearchName.LineFocusedColor = System.Drawing.Color.Blue;
             this.txtSearchName.LineIdleColor = System.Drawing.Color.DodgerBlue;
             this.txtSearchName.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.txtSearchName.LineThickness = 4;
             this.txtSearchName.Location = new System.Drawing.Point(227, 58);
-            this.txtSearchName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearchName.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearchName.Name = "txtSearchName";
             this.txtSearchName.Size = new System.Drawing.Size(206, 46);
             this.txtSearchName.TabIndex = 22;
@@ -106,34 +106,34 @@
             // MemberGrid
             // 
             this.MemberGrid.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.MemberGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.MemberGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.MemberGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.MemberGrid.BackgroundColor = System.Drawing.Color.White;
             this.MemberGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.MemberGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.MemberGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MemberGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MemberGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.MemberGrid.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.MemberGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MemberGrid.DefaultCellStyle = dataGridViewCellStyle6;
             this.MemberGrid.EnableHeadersVisualStyles = false;
             this.MemberGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.MemberGrid.Location = new System.Drawing.Point(9, 125);
-            this.MemberGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MemberGrid.Margin = new System.Windows.Forms.Padding(2);
             this.MemberGrid.Name = "MemberGrid";
             this.MemberGrid.ReadOnly = true;
             this.MemberGrid.RowHeadersVisible = false;
@@ -174,7 +174,7 @@
             this.btnBack.ActiveLineColor = System.Drawing.Color.Snow;
             this.btnBack.BackColor = System.Drawing.SystemColors.Control;
             this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
-            this.btnBack.ButtonText = "Back";
+            this.btnBack.ButtonText = "Trở lại";
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.RoyalBlue;
@@ -200,7 +200,7 @@
             this.btnSearch.ActiveLineColor = System.Drawing.Color.Snow;
             this.btnSearch.BackColor = System.Drawing.SystemColors.Control;
             this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
-            this.btnSearch.ButtonText = "Search";
+            this.btnSearch.ButtonText = "Tìm kiếm";
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.DarkOrange;
@@ -226,7 +226,7 @@
             this.BtnRefresh.ActiveLineColor = System.Drawing.Color.Snow;
             this.BtnRefresh.BackColor = System.Drawing.SystemColors.Control;
             this.BtnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnRefresh.BackgroundImage")));
-            this.BtnRefresh.ButtonText = "Refresh";
+            this.BtnRefresh.ButtonText = "Hiển thị tất cả";
             this.BtnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnRefresh.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRefresh.ForeColor = System.Drawing.Color.SeaGreen;
@@ -235,10 +235,10 @@
             this.BtnRefresh.IdleFillColor = System.Drawing.Color.White;
             this.BtnRefresh.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.BtnRefresh.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnRefresh.Location = new System.Drawing.Point(553, 58);
+            this.BtnRefresh.Location = new System.Drawing.Point(551, 58);
             this.BtnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.BtnRefresh.Name = "BtnRefresh";
-            this.BtnRefresh.Size = new System.Drawing.Size(89, 48);
+            this.BtnRefresh.Size = new System.Drawing.Size(112, 48);
             this.BtnRefresh.TabIndex = 19;
             this.BtnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
@@ -257,7 +257,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ViewMember";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewMember";
