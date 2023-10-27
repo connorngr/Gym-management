@@ -51,17 +51,6 @@ namespace Gym_management
                 Application.Exit();
             }
         }
-        private void AddEquipment_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-            if (e.Alt && e.KeyCode == Keys.F4)
-            {
-                System.Windows.Forms.DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", System.Windows.Forms.MessageBoxButtons.YesNo);
-                if (result == System.Windows.Forms.DialogResult.Yes)
-                {
-                    Application.Exit();
-                }
-            }
-        }
         private void btnReset_Click(object sender, EventArgs e)
         {
             Blank_TextBox();
@@ -81,7 +70,7 @@ namespace Gym_management
         
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            string Payperiod = DTP.Value.Day.ToString() + DTP.Value.Month.ToString() + DTP.Value.Year.ToString();
+            string p_date = DTP.Value.Day.ToString() + DTP.Value.Month.ToString() + DTP.Value.Year.ToString();
             
             if (txtName.Text == "" || txtQuantity.Text == "" || txtPrice.Text=="" || 
                 txtManufacturer.Text=="" || string.IsNullOrEmpty(cmbCondition.Text) || string.IsNullOrEmpty(cmbLocation.Text))
@@ -92,36 +81,42 @@ namespace Gym_management
             {
                 try
                 {
-                    bool checkAmount = long.TryParse(txtPrice.Text, out long Amount);
-                    if (checkAmount != true)
+                    // Kiểm tra tên chỉ đc dưới 50 ký tự
+                    if (txtName.Text.Length > 50)
                     {
-                        throw new Exception("Số tiền phải là số.");
+                        throw new Exception("Tên không hợp lệ. Vui lòng nhập dưới 50 ký tự.");
                     }
-                    if (Amount < 0 || Amount > 9999999999)
-                    {
-                        throw new Exception("Số tiền không thể lớn hơn 9.999.999.999 và không thể âm");
-                    }
+                    // Kiểm tra số lượng không âm và ko vượt quá 999tr số
                     bool checkQuantity = int.TryParse(txtQuantity.Text, out int Quantity);
                     if (checkQuantity != true)
                     {
                         throw new Exception("Số lượng phải là số.");
                     }
-                    if (Quantity < 0 || Quantity > 2147483647)
+                    if (Quantity < 0 || Quantity > 999999999)
                     {
-                        throw new Exception("Số lượng không thể lớn hơn 2.147.483.647 và không thể âm");
+                        throw new Exception("Số lượng không thể lớn hơn 999.999.999 và không thể âm");
                     }
-                    if (txtName.Text.Length > 50)
+                    // Kiểm tra số tiền không âm và ko vượt quá 999tr số
+                    bool checkAmount = long.TryParse(txtPrice.Text, out long Amount);
+                    if (checkAmount != true)
                     {
-                        throw new Exception("Tên không hợp lệ. Vui lòng nhập dưới 50 ký tự.");
+                        throw new Exception("Số tiền phải là số.");
                     }
+                    if (Amount < 0 || Amount > 999999999)
+                    {
+                        throw new Exception("Số tiền không thể lớn hơn 999.999.999 và không thể âm");
+                    }
+                    // Kiểm tra nhà sản xuất dưới 50 ký tự vì trong bảng sql nvarchar(50)
                     if (txtManufacturer.Text.Length > 50)
                     {
                         throw new Exception("Tên nhà sản xuất không hợp lệ. Vui lòng nhập dưới 50 ký tự.");
                     }
+                    // Kiểm tra Trạng thái thiết bị
                     if (cmbCondition.Text != "Mới" && cmbCondition.Text != "Cũ")
                     {
                         throw new Exception("Trang thái chỉ nhận giá trị 'Mới' hoặc 'Cũ'.");
                     }
+                    // Kiểm tra Vị trí 
                     if (cmbLocation.Text != "Khu vực a" && cmbLocation.Text != "Khu vực b" && cmbLocation.Text != "Khu vực c")
                     {
                         throw new Exception("Vị trí chỉ nhận giá trị 'Khu vực a' hoặc 'Khu vực b' hoặc 'Khu vực c'.");
@@ -134,7 +129,7 @@ namespace Gym_management
                     cmd.Parameters.AddWithValue("@Quantity", txtQuantity.Text);
                     cmd.Parameters.AddWithValue("@Price", txtPrice.Text);
                     cmd.Parameters.AddWithValue("@Manufacturer", txtManufacturer.Text);
-                    cmd.Parameters.AddWithValue("@P_Date", Payperiod);
+                    cmd.Parameters.AddWithValue("@P_Date", p_date);
                     cmd.Parameters.AddWithValue("@Condition", cmbCondition.Text);
                     cmd.Parameters.AddWithValue("@Location", cmbLocation.Text);
 
@@ -152,7 +147,21 @@ namespace Gym_management
 
         private void AddEquipment_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+            if ((Control.ModifierKeys & Keys.Alt) != 0 && e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    // Thoát chương trình
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    // Chặn đóng Form
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

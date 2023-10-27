@@ -32,17 +32,6 @@ namespace Gym_management
                 Application.Exit();
             }
         }
-        private void AddMember_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-            if (e.Alt && e.KeyCode == Keys.F4)
-            {
-                System.Windows.Forms.DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", System.Windows.Forms.MessageBoxButtons.YesNo);
-                if (result == System.Windows.Forms.DialogResult.Yes)
-                {
-                    Application.Exit();
-                }
-            }
-        }
         private void Blank_TextBox()
         {
             txtAge.Text = string.Empty;
@@ -121,6 +110,25 @@ namespace Gym_management
                 this.Hide();
                 FormMain formMain = new FormMain();
                 formMain.Show();
+            }
+        }
+
+        private void AddMember_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if ((Control.ModifierKeys & Keys.Alt) != 0 && e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    // Thoát chương trình
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    // Chặn đóng Form
+                    e.Cancel = true;
+                }
             }
         }
     }

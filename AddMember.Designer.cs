@@ -309,8 +309,8 @@
             this.Name = "AddMember";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddMember";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddMember_FormClosing);
             this.Load += new System.EventHandler(this.AddMember_Load);
-            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.AddMember_PreviewKeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

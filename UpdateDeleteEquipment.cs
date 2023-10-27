@@ -35,21 +35,15 @@ namespace Gym_management
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             var ds = new DataSet();
             adapter.Fill(ds);
-            if (ds.Tables[0].Rows.Count == 0)
-            {
-                MessageBox.Show("Không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                EquipmentGrid.DataSource = ds.Tables[0];
-                EquipmentGrid.Columns[0].Width = 50;
-                EquipmentGrid.Columns[2].Width = 100;
-                EquipmentGrid.Columns[3].Width = 100;
-                EquipmentGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                EquipmentGrid.Columns[5].Width = 80;
-                EquipmentGrid.Columns[6].Width = 100;
-                EquipmentGrid.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            }
+            EquipmentGrid.DataSource = ds.Tables[0];
+            EquipmentGrid.Columns[0].Width = 50;
+            EquipmentGrid.Columns[2].Width = 100;
+            EquipmentGrid.Columns[3].Width = 100;
+            EquipmentGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            EquipmentGrid.Columns[5].Width = 80;
+            EquipmentGrid.Columns[6].Width = 100;
+            EquipmentGrid.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            
             conn.Close();
         }
         private void UpdateDeleteEquipment_Load(object sender, EventArgs e)
@@ -63,17 +57,6 @@ namespace Gym_management
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
                 Application.Exit();
-            }
-        }
-        private void UpdateDeleteEquipment_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-            if (e.Alt && e.KeyCode == Keys.F4)
-            {
-                System.Windows.Forms.DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", System.Windows.Forms.MessageBoxButtons.YesNo);
-                if (result == System.Windows.Forms.DialogResult.Yes)
-                {
-                    Application.Exit();
-                }
             }
         }
         private void btnBack_Click(object sender, EventArgs e)
@@ -113,7 +96,7 @@ namespace Gym_management
         {
             if (txtID.Text == "")
             {
-                MessageBox.Show("Vui lòng chọn ID bạn muốn xóa hoặc nhấp chọn trong bảng.");
+                MessageBox.Show("Vui lòng chọn ID bạn muốn xóa hoặc nhấp chuột 2 lần vào dòng trong bảng và xóa.");
             }
             else
             {
@@ -150,7 +133,6 @@ namespace Gym_management
                             MessageBox.Show("Xóa thiết bị thành công.");
                             Populate();
                         }
-
                         conn.Close();
                     }
                     catch (Exception ex)
@@ -172,60 +154,67 @@ namespace Gym_management
             {
                 try
                 {
-                    bool checkAmount = long.TryParse(txtPrice.Text, out long Amount);
-                    if (checkAmount != true)
-                    {
-                        throw new Exception("Số tiền phải là số.");
-                    }
-                    if (Amount < 0 || Amount > 9999999999)
-                    {
-                        throw new Exception("Số tiền không thể lớn hơn 9.999.999.999 và không thể âm");
-                    }
-                    bool checkQuantity = int.TryParse(txtQuantity.Text, out int Quantity);
-                    if (checkQuantity != true)
-                    {
-                        throw new Exception("Số lượng phải là số.");
-                    }
-                    if (Quantity < 0 || Quantity > 2147483647)
-                    {
-                        throw new Exception("Số lượng không thể lớn hơn 2.147.483.647 và không thể âm");
-                    }
-                    if (txtName.Text.Length > 50)
-                    {
-                        throw new Exception("Tên không hợp lệ. Vui lòng nhập dưới 50 ký tự.");
-                    }
-                    if (cmbCondition.Text != "Mới" && cmbCondition.Text != "Cũ")
-                    {
-                        throw new Exception("Trang thái chỉ nhận giá trị 'Mới' hoặc 'Cũ'.");
-                    }
-                    if (cmbLocation.Text != "shelf number 1" && cmbLocation.Text != "shelf number 2" && cmbLocation.Text != "shelf number 3")
-                    {
-                        throw new Exception("Vị trí chỉ nhận giá trị 'Khu vực a' hoặc 'Khu vực b' hoặc 'Khu vực c'.");
-                    }
+                    conn.Open();
+                    // Mã thiết bị phải kiểu int
                     bool checkID = int.TryParse(txtID.Text, out int tID);
                     if (!checkID)
                     {
-                        throw new Exception("Mã thiết bị phải là một số nguyên.");
+                        throw new Exception("Mã thiết bị bạn nhập sai hoặc có thể sử dụng tìm kiếm theo tên để biết mã của nó.");
                     }
-                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa thiết bị này?\n\n" +
-                                                            "Thông tin sẽ bị xóa:\n" +
-                                                            "- ID thiết bị: " + txtID.Text + "\n" +
-                                                            "- Tên thiết bị: " + txtName.Text + "\n" +
-                                                            "- Số lượng thiết bị: " + txtQuantity.Text + "\n" +
-                                                            "- Giá thiết bị: " + txtPrice.Text + "\n" +
-                                                            "- Tình trạng thiết bị: " + cmbCondition.Text + "\n" +
-                                                            "- Vị trí thiết bị: " + cmbLocation.Text + "\n" +
-                                                            "- Các thanh toán liên quan đến thiết bị", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
+                    // Truy vấn xem ID có trong bảng không
+                    string query = "SELECT COUNT(*) FROM Equipment WHERE ID = @ID;";
+                    SqlCommand checkIDCmd = new SqlCommand(query, conn);
+                    checkIDCmd.Parameters.AddWithValue("@ID", tID);
+                    int count = Convert.ToInt32(checkIDCmd.ExecuteScalar());
+                    if (count > 0)
                     {
-                        conn.Open();
-                        string check = "SELECT COUNT(*) FROM Equipment WHERE ID = @ID;";
-                        SqlCommand checkIDCmd = new SqlCommand(check, conn);
-                        checkIDCmd.Parameters.AddWithValue("@ID", txtID.Text);
-                        int count = Convert.ToInt32(checkIDCmd.ExecuteScalar());
-                        if (count > 0)
+                        // Tên thiết bị
+                        if (txtName.Text.Length > 50)
                         {
-                            string query = "UPDATE Equipment SET Name=@Name, Price=@Price, Quantity=@Quantity, [Condition]=@Condition, Location=@Location WHERE ID=@ID;";
+                            throw new Exception("Tên không hợp lệ. Vui lòng nhập dưới 50 ký tự.");
+                        }
+                        // Vị trí
+                        if (cmbCondition.Text != "Mới" && cmbCondition.Text != "Cũ")
+                        {
+                            throw new Exception("Trang thái chỉ nhận giá trị 'Mới' hoặc 'Cũ'.");
+                        }
+                        // Trạng thái
+                        if (cmbLocation.Text != "Khu vực a" && cmbLocation.Text != "Khu vực b" && cmbLocation.Text != "Khu vực c")
+                        {
+                            throw new Exception("Vị trí chỉ nhận giá trị 'Khu vực a' hoặc 'Khu vực b' hoặc 'Khu vực c'.");
+                        }
+                        // Số lượng
+                        bool checkQuantity = int.TryParse(txtQuantity.Text, out int Quantity);
+                        if (checkQuantity != true)
+                        {
+                            throw new Exception("Số lượng phải là số và không có kí tự đặt biệt như '.'.");
+                        }
+                        if (Quantity < 0 || Quantity > 999999999)
+                        {
+                            throw new Exception("Số lượng không thể lớn hơn 999.999.999 và không thể âm");
+                        }
+                        // Số tiền
+                        bool checkAmount = long.TryParse(txtPrice.Text, out long Amount);
+                        if (checkAmount != true)
+                        {
+                            throw new Exception("Số tiền phải là số và không có kí tự đặt biệt như '.'.");
+                        }
+                        if (Amount < 0 || Amount > 999999999)
+                        {
+                            throw new Exception("Số tiền không thể lớn hơn 999.999.999 và không thể âm");
+                        }
+                        DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa thiết bị này?\n\n" +
+                                                                "Thông tin sẽ bị xóa:\n" +
+                                                                "- ID thiết bị: " + txtID.Text + "\n" +
+                                                                "- Tên thiết bị: " + txtName.Text + "\n" +
+                                                                "- Số lượng thiết bị: " + txtQuantity.Text + "\n" +
+                                                                "- Giá thiết bị: " + txtPrice.Text + "\n" +
+                                                                "- Tình trạng thiết bị: " + cmbCondition.Text + "\n" +
+                                                                "- Vị trí thiết bị: " + cmbLocation.Text + "\n" +
+                                                                "- Các thanh toán liên quan đến thiết bị", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            query = "UPDATE Equipment SET Name=@Name, Price=@Price, Quantity=@Quantity, [Condition]=@Condition, Location=@Location WHERE ID=@ID;";
                             SqlCommand cmd = new SqlCommand(query, conn);
                             cmd.Parameters.AddWithValue("@Name", txtName.Text);
                             cmd.Parameters.AddWithValue("@Price", txtPrice.Text);
@@ -234,19 +223,21 @@ namespace Gym_management
                             cmd.Parameters.AddWithValue("@Location", cmbLocation.Text);
                             cmd.Parameters.AddWithValue("@ID", txtID.Text); cmd.ExecuteNonQuery();
                             MessageBox.Show("Cập nhật thiết bị thành công");
-                            conn.Close();
                             Populate();
                         }
-                        else
-                        {
-                            MessageBox.Show("Không tồn tại mã thiết bị này trong bảng.");
-                            conn.Close();
-                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tồn tại mã thiết bị này trong bảng.");
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
                 }
             }
         }
@@ -274,7 +265,7 @@ namespace Gym_management
                 dataTable.Load(reader);
                 if (dataTable.Rows.Count == 0)
                 {
-                    MessageBox.Show("Không có dữ liệu bạn nhập để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Không có dữ liệu nào như bạn đã nhập để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 EquipmentGrid.DataSource = dataTable;
                 reader.Close();
@@ -286,6 +277,23 @@ namespace Gym_management
             }
         }
 
-        
+        private void UpdateDeleteEquipment_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if ((Control.ModifierKeys & Keys.Alt) != 0 && e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    // Thoát chương trình
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    // Chặn đóng Form
+                    e.Cancel = true;
+                }
+            }
+        }
     }
 }

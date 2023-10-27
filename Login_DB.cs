@@ -100,14 +100,21 @@ namespace Gym_management
             }
         }
 
-        private void Login_DB_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        private void Login_DB_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (e.Alt && e.KeyCode == Keys.F4)
+            if ((Control.ModifierKeys & Keys.Alt) != 0 && e.CloseReason == CloseReason.UserClosing)
             {
-                System.Windows.Forms.DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", System.Windows.Forms.MessageBoxButtons.YesNo);
-                if (result == System.Windows.Forms.DialogResult.Yes)
+                DialogResult result = MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
                 {
-                    Application.Exit();
+                    // Thoát chương trình
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    // Chặn đóng Form
+                    e.Cancel = true;
                 }
             }
         }

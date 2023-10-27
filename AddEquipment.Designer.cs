@@ -417,7 +417,6 @@
             this.Text = "Equipment";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddEquipment_FormClosing);
             this.Load += new System.EventHandler(this.Equipment_Load);
-            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.AddEquipment_PreviewKeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

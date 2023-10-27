@@ -32,16 +32,10 @@ namespace Gym_management
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             var ds = new DataSet();
             adapter.Fill(ds);
-            if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count == 0)
-            {
-                MessageBox.Show("Không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MemberGrid.DataSource = ds.Tables[0];
-                MemberGrid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                MemberGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            }
+            MemberGrid.DataSource = ds.Tables[0];
+            MemberGrid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            MemberGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            
             conn.Close();
         }
         private void label8_Click(object sender, EventArgs e)
@@ -50,17 +44,6 @@ namespace Gym_management
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
                 Application.Exit();
-            }
-        }
-        private void Update_DEL_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-            if (e.Alt && e.KeyCode == Keys.F4)
-            {
-                System.Windows.Forms.DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", System.Windows.Forms.MessageBoxButtons.YesNo);
-                if (result == System.Windows.Forms.DialogResult.Yes)
-                {
-                    Application.Exit();
-                }
             }
         }
         private void btnBack_Click(object sender, EventArgs e)
@@ -95,17 +78,17 @@ namespace Gym_management
         {
             if (key == -1)
             {
-                MessageBox.Show("Select member to delete");
+                MessageBox.Show("Nhấn 2 lần vào dòng của bảng và kiểm tra thông tin bên trái bạn muốn xóa đúng hay không");
             }
             else
             {
-                DialogResult result = MessageBox.Show("Are you sure you want to delete this member?\n\n" +
-                                        "Information to be deleted:\n" +
-                                        "- Member Name: " + txtName.Text + "\n" +
-                                        "- Member Phone: " + txtPhone.Text + "\n" +
-                                        "- Member Gender: " + cmbGender.Text + "\n" +
-                                        "- Member Age: " + txtAge.Text + "\n" +
-                                        "- Payments associated with the member", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa thành viên với thông tin này?\n\n" +
+                                        "Thông tin thành viên:\n" +
+                                        "- Tên thành viên: " + txtName.Text + "\n" +
+                                        "- Số điện thoại: " + txtPhone.Text + "\n" +
+                                        "- Giới tính: " + cmbGender.Text + "\n" +
+                                        "- Tuổi: " + txtAge.Text + "\n" +
+                                        "- Xác nhận thông tin bạn muốn xóa", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     try
@@ -199,6 +182,25 @@ namespace Gym_management
                     MessageBox.Show(ex.Message);
                 }
             
+            }
+        }
+
+        private void Update_DEL_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if ((Control.ModifierKeys & Keys.Alt) != 0 && e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    // Thoát chương trình
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    // Chặn đóng Form
+                    e.Cancel = true;
+                }
             }
         }
     }

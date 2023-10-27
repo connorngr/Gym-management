@@ -26,17 +26,6 @@ namespace Gym_management
                 Application.Exit();
             }
         }
-        private void FormMain_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-            if (e.Alt && e.KeyCode == Keys.F4)
-            {
-                System.Windows.Forms.DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", System.Windows.Forms.MessageBoxButtons.YesNo);
-                if (result == System.Windows.Forms.DialogResult.Yes)
-                {
-                    Application.Exit();
-                }
-            }
-        }
         private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
             Update_DEL update_DEL   = new Update_DEL();
@@ -77,6 +66,23 @@ namespace Gym_management
             updateDeleteEquipment.Show();
         }
 
-        
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if ((Control.ModifierKeys & Keys.Alt) != 0 && e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    // Thoát chương trình
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    // Chặn đóng Form
+                    e.Cancel = true;
+                }
+            }
+        }
     }
 }
