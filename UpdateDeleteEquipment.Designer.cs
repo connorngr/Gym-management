@@ -279,7 +279,6 @@
             this.label2.Size = new System.Drawing.Size(93, 20);
             this.label2.TabIndex = 63;
             this.label2.Text = "Mã thiết bị";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // EquipmentGrid
             // 

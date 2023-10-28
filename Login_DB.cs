@@ -45,12 +45,13 @@ namespace Gym_management
         {
             try
             {
-                if(uidTb.Text.Length>10 || passTb.Text.Length>10)
+                conn.Open();
+                if (uidTb.Text.Length>10 || passTb.Text.Length>10)
                 {
                     throw new Exception("Tài khoảng và mật khẩu không quá 10 kí tự. Nhập sai vui lòng nhập lại!");
                 }
 
-                conn.Open();
+                
                 bool isAuthenticated = false;
 
                 string query = "SELECT Account, Password FROM Login";
@@ -73,19 +74,19 @@ namespace Gym_management
                     FormMain fm = new FormMain();
                     fm.Show();
                     this.Hide();
-                    conn.Close();
+                    
                 }
                 else
                 {
                     MessageBox.Show("Bạn nhập sai tài khoảng hoặc mật khẩu vui lòng nhập lại!");
                     uidTb.Text = "";
                     passTb.Text = "";
-                    conn.Close();
                 }
-                
+                conn.Close();
             }
             catch (Exception ex)
             {
+                conn.Close();
                 MessageBox.Show(ex.Message);
             }
 
