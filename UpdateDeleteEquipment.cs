@@ -21,6 +21,7 @@ namespace Gym_management
         public void FetchString()
         {
             DBString Dbstring = new DBString();
+            // Lấy chuỗi kết nối CSDL
             string db = Dbstring.getDB();
             conn = new SqlConnection(db);
         }
@@ -36,7 +37,7 @@ namespace Gym_management
             EquipmentGrid.Columns[2].Width = 100;
             EquipmentGrid.Columns[3].Width = 100;
             EquipmentGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            EquipmentGrid.Columns[5].Width = 80;
+            EquipmentGrid.Columns[5].Width = 100;
             EquipmentGrid.Columns[6].Width = 100;
             EquipmentGrid.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             conn.Close();
@@ -101,7 +102,7 @@ namespace Gym_management
                     
                     if (!int.TryParse(txtID.Text, out int tID))
                     {
-                        throw new Exception("Mã thiết bị phải là một số nguyên không âm.");
+                        throw new Exception("Mã thiết bị bạn nhập sai.");
                     }
                     // Kiểm tra sự tồn tại của ID trong cơ sở dữ liệu
                     conn.Open();
@@ -126,7 +127,7 @@ namespace Gym_management
                                      "- Giá thiết bị: " + txtPrice.Text + "\n" +
                                      "- Tình trạng thiết bị: " + cmbCondition.Text + "\n" +
                                      "- Vị trí thiết bị: " + cmbLocation.Text + "\n" +
-                                     "- Các thanh toán liên quan đến thiết bị", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                     "- Bạn có chắc muốn xóa thiết bị", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                         if (result == DialogResult.Yes)
                         {
@@ -300,7 +301,7 @@ namespace Gym_management
                 if (result == DialogResult.Yes)
                 {
                     // Thoát chương trình
-               s     Environment.Exit(0);
+                    Environment.Exit(0);
                 }
                 else
                 {

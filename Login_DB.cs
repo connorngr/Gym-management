@@ -51,7 +51,7 @@ namespace Gym_management
                     throw new Exception("Tài khoảng và mật khẩu không quá 10 kí tự. Nhập sai vui lòng nhập lại!");
                 }
 
-                
+                //Bien kiem tra
                 bool isAuthenticated = false;
 
                 string query = "SELECT Account, Password FROM Login";

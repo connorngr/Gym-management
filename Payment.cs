@@ -38,6 +38,7 @@ namespace Gym_management
             MemberGrid.DataSource = ds.Tables[0];
             MemberGrid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             MemberGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            MemberGrid.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             conn.Close();
         }
         private void Payment_Load(object sender, EventArgs e)
@@ -80,56 +81,65 @@ namespace Gym_management
                     {
                         throw new Exception("Số tiền phải là số.");
                     }
-                    if (Amount<0 || Amount>9999999999)
+                    if (Amount < 0 || Amount > 999999999)
                     {
-                        throw new Exception("Số tiền không thể lớn hơn 9.999.999.999 và không thể âm");
+                        throw new Exception("Số tiền không thể lớn hơn 999.999.999 và không thể âm");
                     }
                     bool checkID = int.TryParse(txtID.Text, out int ID);
                     if (checkID != true)
                     {
                         throw new Exception("ID không hợp lệ. Nó phải chỉ có 1 chữ số.");
                     }
-                
+
                     string Payperiod = DTP.Value.Month.ToString() + DTP.Value.Year.ToString();
                     conn.Open();
+                    // Kiểm tra xem ID có tồn tại trong bảng Member hay không
+                    string checkMemberQuery = "SELECT COUNT(*) FROM Member WHERE MemID = @MemID";
+                    SqlCommand checkMemberCmd = new SqlCommand(checkMemberQuery, conn);
+                    checkMemberCmd.Parameters.AddWithValue("@MemID", txtID.Text);
+                    int memberCount = (int)checkMemberCmd.ExecuteScalar();
 
-                    // Kiểm tra xem đã thanh toán tháng này chưa
-                    string checkQuery = "SELECT COUNT(*) FROM Payment WHERE MemID = @MemID AND Date = @Date";
-                    SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
-                    checkCmd.Parameters.AddWithValue("@MemID", txtID.Text);
-                    checkCmd.Parameters.AddWithValue("@Date", Payperiod);
-                    int paymentCount = (int)checkCmd.ExecuteScalar();
-
-                    if (paymentCount == 1)
+                    if (memberCount == 0)
                     {
                         conn.Close();
-                        MessageBox.Show("Đã thanh toán tháng này.");
+                        MessageBox.Show("Mã thành viên không tồn tại.");
                     }
                     else
                     {
-                        MessageBoxButtons messageBoxButtons = MessageBoxButtons.YesNo;
-                        string info = string.Format("ID: {0}\nSố tiền: {1}\nThông tin này có chính xác không?", txtID.Text, txtAmount.Text);
-                        DialogResult result = MessageBox.Show(info, "Kiểm tra thông tin", messageBoxButtons);
+                        // Kiểm tra xem đã thanh toán tháng này chưa
+                        string checkQuery = "SELECT COUNT(*) FROM Payment WHERE MemID = @MemID AND Date = @Date";
+                        SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
+                        checkCmd.Parameters.AddWithValue("@MemID", txtID.Text);
+                        checkCmd.Parameters.AddWithValue("@Date", Payperiod);
+                        int paymentCount = (int)checkCmd.ExecuteScalar();
 
-                        if (result == DialogResult.Yes)
+                        if (paymentCount == 1)
                         {
-                            // Thực hiện chèn dữ liệu vào bảng Payment
-                            string insertQuery = "INSERT INTO Payment (MemID, Date, Amount) VALUES (@MemID, @Date, @Amount)";
-                            SqlCommand insertCmd = new SqlCommand(insertQuery, conn);
-                            insertCmd.Parameters.AddWithValue("@MemID", txtID.Text);
-                            insertCmd.Parameters.AddWithValue("@Date", Payperiod);
-                            insertCmd.Parameters.AddWithValue("@Amount", txtAmount.Text);
-
-                            insertCmd.ExecuteNonQuery();
-                            MessageBox.Show("Số tiền thanh toán thành công.");
+                            conn.Close();
+                            MessageBox.Show("Đã thanh toán tháng này.");
                         }
                         else
                         {
-                            MessageBox.Show("Không tìm thấy Mã thành viên", "Thông báo");
+                            MessageBoxButtons messageBoxButtons = MessageBoxButtons.YesNo;
+                            string info = string.Format("ID: {0}\nSố tiền: {1}\nThông tin này có chính xác không?", txtID.Text, txtAmount.Text);
+                            DialogResult result = MessageBox.Show(info, "Kiểm tra thông tin", messageBoxButtons);
+
+                            if (result == DialogResult.Yes)
+                            {
+                                // Thực hiện chèn dữ liệu vào bảng Payment
+                                string insertQuery = "INSERT INTO Payment (MemID, Date, Amount) VALUES (@MemID, @Date, @Amount)";
+                                SqlCommand insertCmd = new SqlCommand(insertQuery, conn);
+                                insertCmd.Parameters.AddWithValue("@MemID", txtID.Text);
+                                insertCmd.Parameters.AddWithValue("@Date", Payperiod);
+                                insertCmd.Parameters.AddWithValue("@Amount", txtAmount.Text);
+
+                                insertCmd.ExecuteNonQuery();
+                                MessageBox.Show("Số tiền thanh toán thành công.");
+                            }
+                            conn.Close();
                         }
-                        conn.Close();
+                        populate();
                     }
-                    populate();
                 }
                 catch (Exception ex)
                 {
@@ -146,7 +156,7 @@ namespace Gym_management
 
                 if (result == DialogResult.Yes)
                 {
-                    // Thoát chương trình
+                    // Thoát chương trình ngay lập tức
                     Environment.Exit(0);
                 }
                 else

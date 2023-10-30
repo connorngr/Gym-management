@@ -17,21 +17,25 @@ namespace Gym_management
         {
             InitializeComponent();
         }
+        // Tạo conn
         SqlConnection conn = new SqlConnection();
         public void FetchString()
         {
+            // Tạo lớp Dbstring và sử dụng hàm
             DBString Dbstring = new DBString();
             string db = Dbstring.getDB();
+            // Gán và có thể sử dụng các thuộc tính phương thức của sqlclient
             conn = new SqlConnection(db);
         }
 
         private void Equipment_Load(object sender, EventArgs e)
         {
+            // Sql đc 
+            FetchString();
             cmbCondition.Text = string.Empty;
             cmbLocation.Text = string.Empty;
             DTP.Format = DateTimePickerFormat.Custom;
             DTP.CustomFormat = "dd-MM-yyyy";
-            FetchString();
         }
         private void Blank_TextBox()
         {
@@ -45,8 +49,8 @@ namespace Gym_management
 
         private void labExit_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.DialogResult result = System.Windows.Forms.MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", System.Windows.Forms.MessageBoxButtons.YesNo);
-            if (result == System.Windows.Forms.DialogResult.Yes)
+            DialogResult result = MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
                 Application.Exit();
             }
@@ -68,14 +72,16 @@ namespace Gym_management
             }
         }
         
+        // Thêm Equipment
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
+            // chuỗi gán vào cột trong bảng sql
             string p_date = DTP.Value.Day.ToString() + DTP.Value.Month.ToString() + DTP.Value.Year.ToString();
             
             if (txtName.Text == "" || txtQuantity.Text == "" || txtPrice.Text=="" || 
                 txtManufacturer.Text=="" || string.IsNullOrEmpty(cmbCondition.Text) || string.IsNullOrEmpty(cmbLocation.Text))
             {
-                MessageBox.Show("Thiếu thông tin", "Cảnh báo");
+                MessageBox.Show("Thiếu thông tin", "Thông báo");
             }
             else
             {
@@ -125,6 +131,8 @@ namespace Gym_management
                     string query = "INSERT INTO Equipment (Name, Quantity, Price, Manufacturer, P_Date, Condition, Location) " +
                         "VALUES (@Name, @Quantity, @Price, @Manufacturer, @P_Date, @Condition, @Location)";
                     SqlCommand cmd = new SqlCommand(query, conn);
+                    //sql injection
+                    // tham số truy vấn
                     cmd.Parameters.AddWithValue("@Name", txtName.Text);
                     cmd.Parameters.AddWithValue("@Quantity", txtQuantity.Text);
                     cmd.Parameters.AddWithValue("@Price", txtPrice.Text);
@@ -135,6 +143,7 @@ namespace Gym_management
 
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Thêm thiết bị thành công");
+                    //Xóa thông tin vừa nhập
                     Blank_TextBox();
                     conn.Close();
                 }
@@ -147,6 +156,7 @@ namespace Gym_management
 
         private void AddEquipment_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // mã lệnh, hệ thống
             if ((Control.ModifierKeys & Keys.Alt) != 0 && e.CloseReason == CloseReason.UserClosing)
             {
                 DialogResult result = MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", MessageBoxButtons.YesNo);

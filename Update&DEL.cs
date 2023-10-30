@@ -95,7 +95,7 @@ namespace Gym_management
                     {
                         conn.Open();
 
-                        // Xóa dữ liệu từ bảng Payment
+                        // Xóa dữ liệu từ bảng Payment vì nó là khóa ngoại 
                         string deletePaymentQuery = "DELETE FROM Payment WHERE MemID = @MemID";
                         SqlCommand deletePaymentCmd = new SqlCommand(deletePaymentQuery, conn);
                         deletePaymentCmd.Parameters.AddWithValue("@MemID", key);

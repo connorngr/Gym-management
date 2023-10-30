@@ -25,7 +25,7 @@ namespace Gym_management
             string db = Dbstring.getDB();
             conn = new SqlConnection(db);
         }
-        
+
         private void Populate()
         {
             try
@@ -41,7 +41,8 @@ namespace Gym_management
                 MemberGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 MemberGrid.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 conn.Close();
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -56,8 +57,8 @@ namespace Gym_management
         }
         private void ViewMember_Load(object sender, EventArgs e)
         {
-                FetchString();
-                Populate();
+            FetchString();
+            Populate();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -73,22 +74,28 @@ namespace Gym_management
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            string query = "SELECT * FROM Member WHERE Name LIKE '%' + @SearchText + '%';";
-            SqlCommand searchCmd = new SqlCommand(query, conn);
-            searchCmd.Parameters.AddWithValue("@SearchText", txtSearchName.Text);
-
-            SqlDataAdapter adapter = new SqlDataAdapter(searchCmd);
-            var ds = new DataSet();
-            adapter.Fill(ds);
-
-            MemberGrid.DataSource = ds.Tables[0];
-            if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count == 0)
+            try
             {
-                MessageBox.Show("Tên bạn tìm kiếm không có trong danh sách.", "Thông tin");
-            }
+                if (txtSearchName.Text == "")
+                {
+                    throw new Exception("vui lòng nhập giá trị bán muốn tìm. nó không thể rỗng");
+                }
+                conn.Open();
+                string query = "SELECT * FROM Member WHERE Name LIKE '%' + @SearchText + '%' OR MemID LIKE '%' + @SearchText + '%';";
+                SqlCommand searchCmd = new SqlCommand(query, conn);
+                searchCmd.Parameters.AddWithValue("@SearchText", txtSearchName.Text);
 
-            conn.Close();
+                SqlDataAdapter adapter = new SqlDataAdapter(searchCmd);
+                var ds = new DataSet();
+                adapter.Fill(ds);
+
+                MemberGrid.DataSource = ds.Tables[0];
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo");
+            }
         }
 
         private void BtnRefresh_Click(object sender, EventArgs e)
